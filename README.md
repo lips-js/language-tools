@@ -93,6 +93,22 @@ Code and run **Lips extension** (F5).
 The TypeScript grammar used by the tests comes from `tm-grammars`, pinned, so
 a snapshot changes only when a grammar here does.
 
+## Publish
+
+The extension is published to the Visual Studio Marketplace by
+`.github/workflows/publish.yml`, with Marketplace Trusted Publishing: the
+workflow's GitHub OIDC token is exchanged for a short-lived Marketplace
+credential, and no token is stored. It runs when a GitHub release is
+published, or by hand from the Actions tab; it runs the tests first.
+
+To release: bump `version` in `extensions/vscode/package.json` and its
+`CHANGELOG.md`, merge, then publish a release.
+
+One-time setup, on the publisher `lipsjs` at
+https://marketplace.visualstudio.com/manage, tab **Trusted Publishing**,
+**Create**: repository owner `lips-js`, repository `language-tools`,
+workflow `publish.yml`, environment left empty.
+
 ## License
 
 MIT, see [LICENSE](LICENSE).

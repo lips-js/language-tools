@@ -1,0 +1,26 @@
+# Publishes the VS Code extension with Visual Studio Marketplace Trusted
+# Publishing: GitHub's OIDC token is exchanged for a 15-minute Marketplace
+# credential, so no token is stored anywhere. The publisher `lipsjs` holds a
+# policy naming this repository and this file (see README, "Publish").
+name: Publish
+
+on:
+  release:
+    types: [ published ]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm test
+      - run: npx --yes @vscode/vsce@4.1.1 publish --oidc
+        working-directory: extensions/vscode
