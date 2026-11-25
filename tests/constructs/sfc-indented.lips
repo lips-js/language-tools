@@ -1,0 +1,12 @@
+// SYNTAX TEST "source.lips.sfc" ".lips file whose template starts indented: findTemplateStart skips leading whitespace on a line"
+const state = { n: 0 }
+// <----- source.ts storage.type.ts
+
+  <section>
+//^ punctuation.definition.tag.begin.lips - source.ts
+// ^^^^^^^ entity.name.tag.lips
+    <p>{state.n}</p>
+//   ^ entity.name.tag.lips
+//      ^^^^^ meta.embedded.expression.lips variable.other.object.ts
+  </section>
+//  ^^^^^^^ entity.name.tag.lips

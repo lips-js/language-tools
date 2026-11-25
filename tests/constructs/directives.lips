@@ -1,0 +1,33 @@
+<!-- SYNTAX TEST "source.lips" "directives: @text= @html= @ref= @format=, i18n= and i18n-<attr>="
+      <span @text=state.msg @html={ state.markup } @ref="field" @other=1></span>
+<!--        ^^^^^ entity.other.attribute-name.directive.lips
+<!--              ^^^^^ meta.embedded.expression.lips
+<!--                        ^^^^^ entity.other.attribute-name.directive.lips
+<!--                                ^^^^^ meta.embedded.expression.lips
+<!--                                               ^^^^ entity.other.attribute-name.directive.lips
+<!--                                                     ^^^^^ string.quoted.double.lips
+<!--                                                            ^^^^^^ entity.other.attribute-name.lips - entity.other.attribute-name.directive.lips
+      <small @format="counter.hint, { count: state.count, limit: input.limit || 12 }"></small>
+<!--         ^^^^^^^ entity.other.attribute-name.directive.lips
+<!--                 ^ string.quoted.lips punctuation.definition.string.begin.lips
+<!--                  ^^^^^^^^^^^^^^ string.quoted.lips
+<!--                                ^ meta.embedded.expression.lips punctuation.section.embedded.begin.lips
+<!--                                  ^^^^^ meta.embedded.expression.lips meta.object-literal.key.ts
+<!--                                         ^^^^^ meta.embedded.expression.lips variable.other.object.ts
+<!--                                                      ^^^^^ meta.embedded.expression.lips meta.object-literal.key.ts
+<!--                                                                         ^^ meta.embedded.expression.lips keyword.operator.logical.ts
+<!--                                                                               ^ punctuation.section.embedded.end.lips
+<!--                                                                                ^ punctuation.definition.string.end.lips
+      <span i18n="counter.reset" i18n-title="hint" i18n>Reset</span>
+<!--        ^^^^ entity.other.attribute-name.i18n.lips
+<!--              ^^^^^^^^^^^^^ string.quoted.double.lips
+<!--                             ^^^^^^^^^^ entity.other.attribute-name.i18n.lips
+<!--                                               ^^^^ entity.other.attribute-name.i18n.lips
+      <i18n lang=state.lang><context theme="dark" user=state.user></context></i18n>
+<!--   ^^^^ keyword.other.scope.lips
+<!--        ^^^^ entity.other.attribute-name.lips
+<!--             ^^^^^ meta.embedded.expression.lips
+<!--                         ^^^^^^^ keyword.other.scope.lips
+<!--                                 ^^^^^ entity.other.attribute-name.lips
+<!--                                              ^^^^ entity.other.attribute-name.lips
+<!--                                                   ^^^^^ meta.embedded.expression.lips

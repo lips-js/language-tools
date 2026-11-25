@@ -1,0 +1,7 @@
+// SYNTAX TEST "source.lips.sfc" ".lips file with no script: it opens with markup (findTemplateStart returns 0)"
+  <p class="count">Count: {state.n}</p>
+//^ punctuation.definition.tag.begin.lips - meta.script.lips
+// ^ entity.name.tag.lips
+//                         ^^^^^ meta.embedded.expression.lips
+  <for [row] in=state.rows by="id"><span>{row.label}</span></for>
+// ^^^ keyword.control.flow.lips - source.ts

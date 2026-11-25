@@ -1,0 +1,15 @@
+{
+  "$comment": "A .lips file: a TypeScript script, then the template. Mirrors parseSFC / findTemplateStart in @lipsjs/lips: the template starts at the first '<' that opens a line (after any indentation) and is followed by [A-Za-z{>!], at the script's top level; a file that opens that way has no script. Top level is where TypeScript's own rules are all closed: inside a string, a comment or brackets, the end below is never tried.",
+  "name": "Lips",
+  "scopeName": "source.lips.sfc",
+  "patterns": [
+    {
+      "name": "meta.script.lips",
+      "begin": "\\A(?!\\s*<[A-Za-z{>!])",
+      "end": "(?=^\\s*<[A-Za-z{>!])",
+      "contentName": "source.ts",
+      "patterns": [ { "include": "source.ts" } ]
+    },
+    { "include": "source.lips" }
+  ]
+}

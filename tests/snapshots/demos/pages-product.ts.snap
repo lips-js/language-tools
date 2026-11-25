@@ -1,0 +1,559 @@
+>/**
+#^^^ source.ts comment.block.documentation.ts punctuation.definition.comment.ts
+> * Route page — path params. `<router>` places the matched template through
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ts comment.block.documentation.ts
+> * a dynamic tag and hands the match down as inputs.
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ts comment.block.documentation.ts
+> */
+#^ source.ts comment.block.documentation.ts
+# ^^ source.ts comment.block.documentation.ts punctuation.definition.comment.ts
+>import type { Handlers, Shape } from '../../../../src/types'
+#^^^^^^ source.ts meta.import.ts keyword.control.import.ts
+#      ^ source.ts meta.import.ts
+#       ^^^^ source.ts meta.import.ts keyword.control.type.ts
+#           ^ source.ts meta.import.ts
+#            ^ source.ts meta.import.ts meta.block.ts punctuation.definition.block.ts
+#             ^ source.ts meta.import.ts meta.block.ts
+#              ^^^^^^^^ source.ts meta.import.ts meta.block.ts variable.other.readwrite.alias.ts
+#                      ^ source.ts meta.import.ts meta.block.ts punctuation.separator.comma.ts
+#                       ^ source.ts meta.import.ts meta.block.ts
+#                        ^^^^^ source.ts meta.import.ts meta.block.ts variable.other.readwrite.alias.ts
+#                             ^ source.ts meta.import.ts meta.block.ts
+#                              ^ source.ts meta.import.ts meta.block.ts punctuation.definition.block.ts
+#                               ^ source.ts meta.import.ts
+#                                ^^^^ source.ts meta.import.ts keyword.control.from.ts
+#                                    ^ source.ts meta.import.ts
+#                                     ^ source.ts meta.import.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#                                      ^^^^^^^^^^^^^^^^^^^^^ source.ts meta.import.ts string.quoted.single.ts
+#                                                           ^ source.ts meta.import.ts string.quoted.single.ts punctuation.definition.string.end.ts
+>
+>export const name = 'page-product'
+#^^^^^^ source.ts meta.var.expr.ts keyword.control.export.ts
+#      ^ source.ts meta.var.expr.ts
+#       ^^^^^ source.ts meta.var.expr.ts storage.type.ts
+#            ^ source.ts meta.var.expr.ts
+#             ^^^^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts variable.other.constant.ts
+#                 ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts
+#                  ^ source.ts meta.var.expr.ts keyword.operator.assignment.ts
+#                   ^ source.ts meta.var.expr.ts
+#                    ^ source.ts meta.var.expr.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#                     ^^^^^^^^^^^^ source.ts meta.var.expr.ts string.quoted.single.ts
+#                                 ^ source.ts meta.var.expr.ts string.quoted.single.ts punctuation.definition.string.end.ts
+>
+>export type Input = {
+#^^^^^^ source.ts meta.type.declaration.ts keyword.control.export.ts
+#      ^ source.ts meta.type.declaration.ts
+#       ^^^^ source.ts meta.type.declaration.ts storage.type.type.ts
+#           ^ source.ts meta.type.declaration.ts
+#            ^^^^^ source.ts meta.type.declaration.ts entity.name.type.alias.ts
+#                 ^ source.ts meta.type.declaration.ts
+#                  ^ source.ts meta.type.declaration.ts keyword.operator.assignment.ts
+#                   ^ source.ts meta.type.declaration.ts
+#                    ^ source.ts meta.type.declaration.ts meta.object.type.ts punctuation.definition.block.ts
+>  params: { id: string }
+#^^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts
+#  ^^^^^^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#        ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#         ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#          ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.object.type.ts punctuation.definition.block.ts
+#           ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.object.type.ts meta.field.declaration.ts
+#            ^^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#              ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#               ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#                ^^^^^^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts support.type.primitive.ts
+#                      ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#                       ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.object.type.ts punctuation.definition.block.ts
+>  query: Record<string, string>
+#^^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts
+#  ^^^^^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#       ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#        ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#         ^^^^^^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts entity.name.type.ts
+#               ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
+#                ^^^^^^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.type.parameters.ts support.type.primitive.ts
+#                      ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.type.parameters.ts punctuation.separator.comma.ts
+#                       ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.type.parameters.ts
+#                        ^^^^^^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.type.parameters.ts support.type.primitive.ts
+#                              ^ source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
+>}
+#^ source.ts meta.type.declaration.ts meta.object.type.ts punctuation.definition.block.ts
+>
+>export const handler: Handlers<Shape<{ input: Input }>> = {
+#^^^^^^ source.ts meta.var.expr.ts keyword.control.export.ts
+#      ^ source.ts meta.var.expr.ts
+#       ^^^^^ source.ts meta.var.expr.ts storage.type.ts
+#            ^ source.ts meta.var.expr.ts
+#             ^^^^^^^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts variable.other.constant.ts
+#                    ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#                     ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts
+#                      ^^^^^^^^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts entity.name.type.ts
+#                              ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
+#                               ^^^^^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts entity.name.type.ts
+#                                    ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
+#                                     ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts punctuation.definition.block.ts
+#                                      ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts
+#                                       ^^^^^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#                                            ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#                                             ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#                                              ^^^^^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts entity.name.type.ts
+#                                                   ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#                                                    ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts punctuation.definition.block.ts
+#                                                     ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
+#                                                      ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
+#                                                       ^ source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts
+#                                                        ^ source.ts meta.var.expr.ts keyword.operator.assignment.ts
+#                                                         ^ source.ts meta.var.expr.ts
+#                                                          ^ source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.definition.block.ts
+>  go( path: string ){ this.context.navigate?.( path ) }
+#^^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts
+#  ^^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.definition.method.ts entity.name.function.ts
+#    ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
+#     ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts
+#      ^^^^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts variable.parameter.ts
+#          ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#           ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts meta.type.annotation.ts
+#            ^^^^^^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts meta.type.annotation.ts support.type.primitive.ts
+#                  ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts meta.type.annotation.ts
+#                   ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts punctuation.definition.parameters.end.ts
+#                    ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.definition.block.ts
+#                     ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                      ^^^^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.function-call.ts variable.language.this.ts
+#                          ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.function-call.ts punctuation.accessor.ts
+#                           ^^^^^^^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.function-call.ts variable.other.object.property.ts
+#                                  ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.function-call.ts punctuation.accessor.ts
+#                                   ^^^^^^^^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.function-call.ts entity.name.function.ts
+#                                           ^^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.function-call.ts punctuation.accessor.optional.ts
+#                                             ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.brace.round.ts
+#                                              ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                                               ^^^^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts variable.other.readwrite.ts
+#                                                   ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                                                    ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.brace.round.ts
+#                                                     ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                                                      ^ source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.definition.block.ts
+>}
+#^ source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.definition.block.ts
+>
+>export const stylesheet = `
+#^^^^^^ source.ts keyword.control.export.ts
+#      ^ source.ts
+#       ^^^^^ source.ts storage.type.ts
+#            ^ source.ts
+#             ^^^^^^^^^^ source.ts variable.other.constant.ts
+#                       ^ source.ts
+#                        ^ source.ts keyword.operator.assignment.ts
+#                         ^ source.ts
+#                          ^ source.ts string.template.ts punctuation.definition.string.template.begin.ts
+>  dl {
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^ source.ts meta.embedded.block.css.lips entity.name.tag.css
+#    ^ source.ts meta.embedded.block.css.lips
+#     ^ source.ts meta.embedded.block.css.lips meta.property-list.css punctuation.section.property-list.begin.bracket.curly.css
+>    display: grid;
+#^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#    ^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#           ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#            ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#             ^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css support.constant.property-value.css
+#                 ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+>    grid-template-columns: max-content 1fr;
+#^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#    ^^^^^^^^^^^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#                         ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#                          ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                           ^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css support.constant.property-value.css
+#                                      ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                                       ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#                                        ^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css keyword.other.unit.css
+#                                          ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+>    gap: .35rem .9rem;
+#^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#    ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#       ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#        ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#         ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#            ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css keyword.other.unit.css
+#               ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                ^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#                  ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css keyword.other.unit.css
+#                     ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+>    margin: 0;
+#^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#    ^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#          ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#           ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#            ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#             ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+>    align-items: baseline;
+#^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#    ^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#               ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#                ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                 ^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css support.constant.property-value.css
+#                         ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+>  }
+#^^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#  ^ source.ts meta.embedded.block.css.lips meta.property-list.css punctuation.section.property-list.end.bracket.curly.css
+>  dt { font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text-faint) }
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^ source.ts meta.embedded.block.css.lips entity.name.tag.css
+#    ^ source.ts meta.embedded.block.css.lips
+#     ^ source.ts meta.embedded.block.css.lips meta.property-list.css punctuation.section.property-list.begin.bracket.curly.css
+#      ^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#       ^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#                ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#                 ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                  ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#                     ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css keyword.other.unit.css
+#                        ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+#                         ^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#                          ^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#                                     ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#                                      ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                                       ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#                                          ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+#                                           ^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#                                            ^^^^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#                                                          ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#                                                           ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                                                            ^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css support.constant.property-value.css
+#                                                                     ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+#                                                                      ^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#                                                                       ^^^^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#                                                                                     ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#                                                                                      ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                                                                                       ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#                                                                                          ^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css keyword.other.unit.css
+#                                                                                            ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+#                                                                                             ^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#                                                                                              ^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#                                                                                                   ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#                                                                                                    ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                                                                                                     ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css support.function.css
+#                                                                                                        ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.begin.bracket.round.css
+#                                                                                                         ^^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css variable.argument.css
+#                                                                                                                     ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.end.bracket.round.css
+#                                                                                                                      ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                                                                                                                       ^ source.ts meta.embedded.block.css.lips meta.property-list.css punctuation.section.property-list.end.bracket.curly.css
+>  dd { margin: 0; font-family: var(--mono) }
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^ source.ts meta.embedded.block.css.lips entity.name.tag.css
+#    ^ source.ts meta.embedded.block.css.lips
+#     ^ source.ts meta.embedded.block.css.lips meta.property-list.css punctuation.section.property-list.begin.bracket.curly.css
+#      ^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#       ^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#             ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#              ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#               ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#                ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+#                 ^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#                  ^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#                             ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#                              ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                               ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css support.function.css
+#                                  ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.begin.bracket.round.css
+#                                   ^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css variable.argument.css
+#                                         ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.end.bracket.round.css
+#                                          ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                                           ^ source.ts meta.embedded.block.css.lips meta.property-list.css punctuation.section.property-list.end.bracket.curly.css
+>  dd.empty { color: var(--text-faint); font-family: var(--sans); font-style: italic }
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^ source.ts meta.embedded.block.css.lips entity.name.tag.css
+#    ^ source.ts meta.embedded.block.css.lips entity.other.attribute-name.class.css punctuation.definition.entity.css
+#     ^^^^^ source.ts meta.embedded.block.css.lips entity.other.attribute-name.class.css
+#          ^ source.ts meta.embedded.block.css.lips
+#           ^ source.ts meta.embedded.block.css.lips meta.property-list.css punctuation.section.property-list.begin.bracket.curly.css
+#            ^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#             ^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#                  ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#                   ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                    ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css support.function.css
+#                       ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.begin.bracket.round.css
+#                        ^^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css variable.argument.css
+#                                    ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.end.bracket.round.css
+#                                     ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+#                                      ^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#                                       ^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#                                                  ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#                                                   ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                                                    ^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css support.function.css
+#                                                       ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.begin.bracket.round.css
+#                                                        ^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css variable.argument.css
+#                                                              ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.end.bracket.round.css
+#                                                               ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.terminator.rule.css
+#                                                                ^ source.ts meta.embedded.block.css.lips meta.property-list.css
+#                                                                 ^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css support.type.property-name.css
+#                                                                           ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css punctuation.separator.key-value.css
+#                                                                            ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                                                                             ^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css support.constant.property-value.css
+#                                                                                   ^ source.ts meta.embedded.block.css.lips meta.property-list.css meta.property-list.declaration.css meta.property-value.css
+#                                                                                    ^ source.ts meta.embedded.block.css.lips meta.property-list.css punctuation.section.property-list.end.bracket.curly.css
+>`
+#^ source.ts string.template.ts punctuation.definition.string.template.end.ts
+>
+>export default `
+#^^^^^^ source.ts keyword.control.export.ts
+#      ^ source.ts
+#       ^^^^^^^ source.ts keyword.control.default.ts
+#              ^ source.ts
+#               ^ source.ts string.template.ts punctuation.definition.string.template.begin.ts
+>  <div>
+#^^ source.ts meta.embedded.block.lips
+#  ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#   ^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#      ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>    <h1>Product</h1>
+#^^^^ source.ts meta.embedded.block.lips
+#    ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#     ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#       ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#        ^^^^^^^ source.ts meta.embedded.block.lips
+#               ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                 ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                   ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>    <p class="lede">The URL is the state — reload this page and the same values come back.</p>
+#^^^^ source.ts meta.embedded.block.lips
+#    ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#     ^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#      ^ source.ts meta.embedded.block.lips meta.tag.lips
+#       ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#            ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#             ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#              ^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                  ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                   ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ts meta.embedded.block.lips
+#                                                                                          ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                                                            ^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                                                                                             ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>
+>    <section class="panel">
+#^^^^ source.ts meta.embedded.block.lips
+#    ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#     ^^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#            ^ source.ts meta.embedded.block.lips meta.tag.lips
+#             ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                  ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                   ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                    ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                         ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                          ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>      <header>
+#^^^^^^ source.ts meta.embedded.block.lips
+#      ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#       ^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#             ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>        <h2>Match</h2>
+#^^^^^^^^ source.ts meta.embedded.block.lips
+#        ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#           ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#            ^^^^^ source.ts meta.embedded.block.lips
+#                 ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                   ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                     ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>        <span class="tag">path: '/product/:id'</span>
+#^^^^^^^^ source.ts meta.embedded.block.lips
+#        ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#             ^ source.ts meta.embedded.block.lips meta.tag.lips
+#              ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                   ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                    ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                     ^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                        ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                         ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#                          ^^^^^^^^^^^^^^^^^^^^ source.ts meta.embedded.block.lips
+#                                              ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                ^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                                                    ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>      </header>
+#^^^^^^ source.ts meta.embedded.block.lips
+#      ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#        ^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#              ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>
+>      <dl>
+#^^^^^^ source.ts meta.embedded.block.lips
+#      ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#       ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#         ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>        <dt>params.id</dt>
+#^^^^^^^^ source.ts meta.embedded.block.lips
+#        ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#           ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#            ^^^^^^^^^ source.ts meta.embedded.block.lips
+#                     ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                       ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                         ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>        <dd @text=input.params.id></dd>
+#^^^^^^^^ source.ts meta.embedded.block.lips
+#        ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#           ^ source.ts meta.embedded.block.lips meta.tag.lips
+#            ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#                 ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                  ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                       ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                        ^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.property.ts
+#                              ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                               ^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                                 ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#                                  ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                                    ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                                      ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>
+>        <dt>query.category</dt>
+#^^^^^^^^ source.ts meta.embedded.block.lips
+#        ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#           ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#            ^^^^^^^^^^^^^^ source.ts meta.embedded.block.lips
+#                          ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                            ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                              ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>        <if( input.query.category )>
+#^^^^^^^^ source.ts meta.embedded.block.lips
+#        ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^ source.ts meta.embedded.block.lips meta.tag.lips keyword.control.flow.lips
+#           ^ source.ts meta.embedded.block.lips meta.tag.lips meta.head.lips punctuation.section.head.begin.lips
+#            ^ source.ts meta.embedded.block.lips meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#             ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.head.lips meta.embedded.expression.lips variable.other.object.ts
+#                  ^ source.ts meta.embedded.block.lips meta.tag.lips meta.head.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                   ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.head.lips meta.embedded.expression.lips variable.other.object.property.ts
+#                        ^ source.ts meta.embedded.block.lips meta.tag.lips meta.head.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                         ^^^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.head.lips meta.embedded.expression.lips variable.other.property.ts
+#                                 ^ source.ts meta.embedded.block.lips meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#                                  ^ source.ts meta.embedded.block.lips meta.tag.lips meta.head.lips punctuation.section.head.end.lips
+#                                   ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>          <dd @text=input.query.category></dd>
+#^^^^^^^^^^ source.ts meta.embedded.block.lips
+#          ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#           ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#             ^ source.ts meta.embedded.block.lips meta.tag.lips
+#              ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#                   ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                    ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                         ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                          ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.property.ts
+#                               ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                                ^^^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                                        ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#                                         ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                                           ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                                             ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>        </if>
+#^^^^^^^^ source.ts meta.embedded.block.lips
+#        ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#          ^^ source.ts meta.embedded.block.lips meta.tag.lips keyword.control.flow.lips
+#            ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>        <else>
+#^^^^^^^^ source.ts meta.embedded.block.lips
+#        ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^^^ source.ts meta.embedded.block.lips meta.tag.lips keyword.control.flow.lips
+#             ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>          <dd class="empty">not set</dd>
+#^^^^^^^^^^ source.ts meta.embedded.block.lips
+#          ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#           ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#             ^ source.ts meta.embedded.block.lips meta.tag.lips
+#              ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                   ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                    ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                     ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                          ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                           ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#                            ^^^^^^^ source.ts meta.embedded.block.lips
+#                                   ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                                     ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                                       ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>        </else>
+#^^^^^^^^ source.ts meta.embedded.block.lips
+#        ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#          ^^^^ source.ts meta.embedded.block.lips meta.tag.lips keyword.control.flow.lips
+#              ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>      </dl>
+#^^^^^^ source.ts meta.embedded.block.lips
+#      ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#        ^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#          ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>    </section>
+#^^^^ source.ts meta.embedded.block.lips
+#    ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#      ^^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#             ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>
+>    <div class="row">
+#^^^^ source.ts meta.embedded.block.lips
+#    ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#     ^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#        ^ source.ts meta.embedded.block.lips meta.tag.lips
+#         ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#              ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#               ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                ^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                   ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                    ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>      <button class="ghost" on-click(go, '/product/42?category=laptop')>Another product</button>
+#^^^^^^ source.ts meta.embedded.block.lips
+#      ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#       ^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#             ^ source.ts meta.embedded.block.lips meta.tag.lips
+#              ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                   ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                    ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                     ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                          ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                           ^ source.ts meta.embedded.block.lips meta.tag.lips
+#                            ^^^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.event.lips
+#                                    ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.section.arguments.begin.lips
+#                                     ^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.readwrite.ts
+#                                       ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.separator.comma.ts
+#                                        ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips
+#                                         ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips string.quoted.single.ts punctuation.definition.string.begin.ts
+#                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips string.quoted.single.ts
+#                                                                     ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips string.quoted.single.ts punctuation.definition.string.end.ts
+#                                                                      ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.section.arguments.end.lips
+#                                                                       ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#                                                                        ^^^^^^^^^^^^^^^ source.ts meta.embedded.block.lips
+#                                                                                       ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                                                         ^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                                                                                               ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>      <button class="act" on-click(go, '/')>Back to overview</button>
+#^^^^^^ source.ts meta.embedded.block.lips
+#      ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#       ^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#             ^ source.ts meta.embedded.block.lips meta.tag.lips
+#              ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                   ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                    ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                     ^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                        ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                         ^ source.ts meta.embedded.block.lips meta.tag.lips
+#                          ^^^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.event.lips
+#                                  ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.section.arguments.begin.lips
+#                                   ^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.readwrite.ts
+#                                     ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.separator.comma.ts
+#                                      ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips
+#                                       ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips string.quoted.single.ts punctuation.definition.string.begin.ts
+#                                        ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips string.quoted.single.ts
+#                                         ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips string.quoted.single.ts punctuation.definition.string.end.ts
+#                                          ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.section.arguments.end.lips
+#                                           ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#                                            ^^^^^^^^^^^^^^^^ source.ts meta.embedded.block.lips
+#                                                            ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                              ^^^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                                                                    ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>    </div>
+#^^^^ source.ts meta.embedded.block.lips
+#    ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#      ^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#         ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>  </div>
+#^^ source.ts meta.embedded.block.lips
+#  ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#    ^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#       ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+>`
+#^ source.ts string.template.ts punctuation.definition.string.template.end.ts
+>

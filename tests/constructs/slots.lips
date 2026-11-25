@@ -1,0 +1,32 @@
+<!-- SYNTAX TEST "source.lips" "slots: {expr} in text and in quoted values, as TypeScript expressions (parseText, parseAttrValue)"
+      <p>Hello {user.name}, {a ? "}" : { b: 1 }.b} left</p>
+<!--     ^^^^^ - meta.embedded.expression.lips
+<!--           ^ meta.embedded.expression.lips punctuation.section.embedded.begin.lips
+<!--            ^^^^ meta.embedded.expression.lips variable.other.object.ts
+<!--                 ^^^^ variable.other.property.ts
+<!--                     ^ meta.embedded.expression.lips punctuation.section.embedded.end.lips
+<!--                      ^ - meta.embedded.expression.lips
+<!--                             ^^^ meta.embedded.expression.lips string.quoted.double.ts
+<!--                                     ^ meta.embedded.expression.lips meta.objectliteral.ts
+<!--                                          ^ meta.embedded.expression.lips meta.objectliteral.ts punctuation.definition.block.ts
+<!--                                             ^ meta.embedded.expression.lips punctuation.section.embedded.end.lips
+<!--                                               ^^^^ - meta.embedded.expression.lips
+      <p class="user {state.admin ? 'admin' : ''} card" title='a {b} &amp;'>
+<!--           ^ string.quoted.double.lips punctuation.definition.string.begin.lips
+<!--            ^^^^^ string.quoted.double.lips
+<!--                 ^ meta.embedded.expression.lips punctuation.section.embedded.begin.lips
+<!--                  ^^^^^ meta.embedded.expression.lips variable.other.object.ts
+<!--                                ^^^^^^^ meta.embedded.expression.lips string.quoted.single.ts
+<!--                                             ^^^^^ string.quoted.double.lips
+<!--                                                  ^ punctuation.definition.string.end.lips
+<!--                                                          ^ string.quoted.single.lips punctuation.definition.string.begin.lips
+<!--                                                              ^ meta.embedded.expression.lips variable.other.readwrite.ts
+<!--                                                                 ^^^^^ constant.character.entity.lips
+      <p>{
+<!--     ^ meta.embedded.expression.lips
+        state.items.map( x => x.label ).join(", ")
+<!--    ^^^^^ meta.embedded.expression.lips variable.other.object.ts
+<!--                       ^^ meta.embedded.expression.lips storage.type.function.arrow.ts
+      }</p>
+<!--  ^ meta.embedded.expression.lips punctuation.section.embedded.end.lips
+<!--   ^^ punctuation.definition.tag.begin.lips

@@ -1,0 +1,43 @@
+// SYNTAX TEST "source.lips.sfc" ".lips file: a script up to the first line-leading <, then the template (parseSFC, findTemplateStart)"
+import type { Handlers } from '@lipsjs/lips'
+// <------ meta.script.lips source.ts keyword.control.import.ts
+
+const state = { count: 0, tag: '<b>' }
+// <----- source.ts storage.type.ts
+//                             ^^^^^ source.ts string.quoted.single.ts - meta.tag.lips
+const handler = {
+  step( by: number ){ this.state.count += by }
+//^^^^ source.ts
+}
+/*
+<div> inside a comment is still script
+// <----- source.ts comment.block.ts - meta.tag.lips
+*/
+const types = [
+  <string>count
+// ^^^^^^ source.ts - entity.name.tag
+]
+const macros = `<macro [label] name="tag"><b>{label}</b></macro>`
+// <----- source.ts storage.type.ts
+//    ^^^^^^ variable.other.constant.ts
+//             ^ punctuation.definition.string.template.begin.ts
+//               ^^^^^ meta.embedded.block.lips storage.type.lips
+//                      ^^^^^ variable.parameter.lips
+//                                         ^ entity.name.tag.lips
+//                                                              ^ punctuation.definition.string.template.end.ts
+export const stylesheet = `.count { color: {state.tone} }`
+//           ^^^^^^^^^^ variable.other.constant.ts
+//                         ^^^^^^ meta.embedded.block.css.lips entity.other.attribute-name.class.css
+//                                          ^^^^^ meta.embedded.expression.lips variable.other.object.ts
+
+<div class="counter">
+// <- source.lips.sfc punctuation.definition.tag.begin.lips - meta.script.lips source.ts
+// <~--- entity.name.tag.lips
+  <span @text=state.count></span>
+// ^^^^ entity.name.tag.lips - source.ts
+//      ^^^^^ entity.other.attribute-name.directive.lips
+//            ^^^^^ meta.embedded.expression.lips
+  const x = 1
+//^^^^^ - storage.type.ts source.ts
+</div>
+//^^^ entity.name.tag.lips

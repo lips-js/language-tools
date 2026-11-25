@@ -1,0 +1,48 @@
+<!-- SYNTAX TEST "source.lips" "blocks: <for>, <let>/<const>, <async>/<then>/<catch>, <macro>, slots with arguments"
+      <let subtotal={ state.price * state.qty } tax={ subtotal / 10 }/>
+<!--   ^^^ storage.type.lips
+<!--       ^^^^^^^^ entity.other.attribute-name.lips
+<!--                  ^^^^^ meta.embedded.expression.lips
+<!--                              ^ meta.embedded.expression.lips keyword.operator.arithmetic.ts
+<!--                                            ^^^ entity.other.attribute-name.lips
+<!--                                                           ^ meta.embedded.expression.lips
+<!--                                                                 ^^ punctuation.definition.tag.end.lips
+      <const max=Math.max( a, b )/>
+<!--   ^^^^^ storage.type.lips
+<!--         ^^^ entity.other.attribute-name.lips
+<!--             ^^^^ meta.embedded.expression.lips
+<!--                             ^^ punctuation.definition.tag.end.lips
+      <async await( state.user )><then [u]>Hello {u.name}</then><catch [e]>{e.message}</catch></async>
+<!--         ^^^^^ keyword.control.flow.await.lips
+<!--                ^^^^^ meta.embedded.expression.lips
+<!--                              ^^^^ keyword.control.flow.lips
+<!--                                    ^ variable.parameter.lips
+<!--                                              ^ meta.embedded.expression.lips
+<!--                                                             ^^^^^ keyword.control.flow.lips
+<!--                                                                    ^ variable.parameter.lips
+<!--                                                                        ^ meta.embedded.expression.lips
+      <macro [label, active, pick] name="tool"><b on-click(pick)>{label}</b></macro>
+<!--   ^^^^^ storage.type.lips
+<!--          ^^^^^ variable.parameter.lips
+<!--                         ^^^^ variable.parameter.lips
+<!--                               ^^^^ entity.other.attribute-name.lips
+<!--                                     ^^^^ string.quoted.double.lips
+<!--                                              ^^^^^^^^ entity.other.attribute-name.event.lips
+<!--                                                       ^^^^ meta.embedded.expression.lips
+<!--                                                              ^^^^^ meta.embedded.expression.lips
+      <tool label="Pen" active pick=self.choose/>
+<!--   ^^^^ entity.name.tag.component.lips
+<!--                    ^^^^^^ entity.other.attribute-name.lips
+<!--                                ^^^^ meta.embedded.expression.lips
+<!--                                           ^^ punctuation.definition.tag.end.lips
+      <item-list [item] items=state.people><span>{item}</span></item-list>
+<!--   ^^^^^^^^^ entity.name.tag.component.lips
+<!--              ^^^^ variable.parameter.lips
+<!--                          ^^^^^ meta.embedded.expression.lips
+<!--                                              ^^^^ meta.embedded.expression.lips
+      <for [n] from=5 to=3> {n}</for>
+<!--   ^^^ keyword.control.flow.lips
+<!--        ^ variable.parameter.lips
+<!--                ^ meta.embedded.expression.lips
+<!--                     ^ meta.embedded.expression.lips
+<!--                         ^ meta.embedded.expression.lips

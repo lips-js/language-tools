@@ -1,0 +1,88 @@
+><div class="screen">
+#^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+# ^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#    ^ source.lips.sfc meta.tag.lips
+#     ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#          ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#           ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#            ^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                  ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                   ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>  <p class="count" id="count">Pushed · Count: {state.n}</p>
+#^^ source.lips.sfc
+#  ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#   ^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#    ^ source.lips.sfc meta.tag.lips
+#     ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#          ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#           ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#            ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                 ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                  ^ source.lips.sfc meta.tag.lips
+#                   ^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                     ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                      ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                       ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                            ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                             ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                              ^^^^^^^^^^^^^^^^ source.lips.sfc
+#                                              ^ source.lips.sfc meta.embedded.expression.lips punctuation.section.embedded.begin.lips
+#                                               ^^^^^ source.lips.sfc meta.embedded.expression.lips variable.other.object.ts
+#                                                    ^ source.lips.sfc meta.embedded.expression.lips punctuation.accessor.ts
+#                                                     ^ source.lips.sfc meta.embedded.expression.lips variable.other.property.ts
+#                                                      ^ source.lips.sfc meta.embedded.expression.lips punctuation.section.embedded.end.lips
+#                                                       ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                         ^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                                          ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>  <for [row] in=state.rows by="id"><div class="row"><span>{row.label}</span></div></for>
+#^^ source.lips.sfc
+#  ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#   ^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#      ^ source.lips.sfc meta.tag.lips
+#       ^ source.lips.sfc meta.tag.lips meta.arguments.lips punctuation.definition.arguments.begin.lips
+#        ^^^ source.lips.sfc meta.tag.lips meta.arguments.lips variable.parameter.lips
+#           ^ source.lips.sfc meta.tag.lips meta.arguments.lips punctuation.definition.arguments.end.lips
+#            ^ source.lips.sfc meta.tag.lips
+#             ^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#               ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                     ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                      ^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                          ^ source.lips.sfc meta.tag.lips
+#                           ^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                             ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                              ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                               ^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                                 ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                                  ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                   ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                    ^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                       ^ source.lips.sfc meta.tag.lips
+#                                        ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                                             ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                                              ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                                               ^^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                                                  ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                                                   ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                                    ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                     ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                                         ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                                          ^ source.lips.sfc meta.embedded.expression.lips punctuation.section.embedded.begin.lips
+#                                                           ^^^ source.lips.sfc meta.embedded.expression.lips variable.other.object.ts
+#                                                              ^ source.lips.sfc meta.embedded.expression.lips punctuation.accessor.ts
+#                                                               ^^^^^ source.lips.sfc meta.embedded.expression.lips variable.other.property.ts
+#                                                                    ^ source.lips.sfc meta.embedded.expression.lips punctuation.section.embedded.end.lips
+#                                                                     ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                                       ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                                                           ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                                                            ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                                              ^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                                                                 ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                                                                  ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                                                    ^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#                                                                                       ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+></div>
+#^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#  ^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#     ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>

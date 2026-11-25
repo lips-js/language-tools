@@ -1,0 +1,36 @@
+<!-- SYNTAX TEST "source.lips" "heads: <if( … )>, <else-if( … )>, <switch( … )>, <log( … )> (HEAD_SUGAR_TAGS)"
+      <if( state.level < 34 && ( a || b ) )>low</if>
+<!--   ^^ keyword.control.flow.lips
+<!--     ^ meta.head.lips punctuation.section.head.begin.lips
+<!--       ^^^^^ meta.head.lips meta.embedded.expression.lips variable.other.object.ts
+<!--                   ^ meta.embedded.expression.lips keyword.operator.relational.ts
+<!--                     ^^ meta.embedded.expression.lips constant.numeric.decimal.ts
+<!--                           ^ meta.embedded.expression.lips
+<!--                                    ^ meta.embedded.expression.lips
+<!--                                      ^ meta.head.lips punctuation.section.head.end.lips
+<!--                                       ^ punctuation.definition.tag.end.lips
+<!--                                        ^^^ - meta.head.lips
+      <else-if( state.level > 67 )>high</else-if>
+<!--          ^ meta.head.lips
+<!--                        ^ meta.embedded.expression.lips keyword.operator.relational.ts
+<!--                             ^ punctuation.section.head.end.lips
+<!--                              ^ punctuation.definition.tag.end.lips
+      <switch( state.tab )><case is="draft">d</case></switch>
+<!--         ^ meta.head.lips
+<!--           ^^^^^ meta.embedded.expression.lips
+<!--                             ^^ entity.other.attribute-name.lips
+<!--                                 ^^^^^ string.quoted.double.lips
+      <log( 'rows:', state.rows.length )/>
+<!--   ^^^ support.function.log.lips
+<!--        ^^^^^^^ meta.embedded.expression.lips string.quoted.single.ts
+<!--               ^ meta.embedded.expression.lips
+<!--                            ^^^^^^ meta.embedded.expression.lips
+<!--                                    ^^ punctuation.definition.tag.end.lips
+      <if(
+<!--     ^ meta.head.lips
+        state.open
+<!--    ^^^^^ meta.head.lips meta.embedded.expression.lips
+      )>open</if>
+<!--  ^ punctuation.section.head.end.lips
+<!--   ^ punctuation.definition.tag.end.lips
+<!--    ^^^^ - meta.head.lips

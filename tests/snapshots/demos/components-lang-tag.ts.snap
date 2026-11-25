@@ -1,0 +1,167 @@
+>/**
+#^^^ source.ts comment.block.documentation.ts punctuation.definition.comment.ts
+> * Prints the language THIS component resolves to.
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ts comment.block.documentation.ts
+> *
+#^^^ source.ts comment.block.documentation.ts
+> * Placed under `<i18n lang=…>` it reports the scoped language — that is the
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ts comment.block.documentation.ts
+> * half of RFC-005 §2 a same-template `<i18n>` block cannot show, because
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ts comment.block.documentation.ts
+> * `self` is one object per component.
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ts comment.block.documentation.ts
+> */
+#^ source.ts comment.block.documentation.ts
+# ^^ source.ts comment.block.documentation.ts punctuation.definition.comment.ts
+>export const stylesheet = `
+#^^^^^^ source.ts keyword.control.export.ts
+#      ^ source.ts
+#       ^^^^^ source.ts storage.type.ts
+#            ^ source.ts
+#             ^^^^^^^^^^ source.ts variable.other.constant.ts
+#                       ^ source.ts
+#                        ^ source.ts keyword.operator.assignment.ts
+#                         ^ source.ts
+#                          ^ source.ts string.template.ts punctuation.definition.string.template.begin.ts
+>  /* Root-level: the element carrying rel= is not a descendant of itself */
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^ source.ts meta.embedded.block.css.lips comment.block.css punctuation.definition.comment.begin.css
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.ts meta.embedded.block.css.lips comment.block.css
+#                                                                         ^^ source.ts meta.embedded.block.css.lips comment.block.css punctuation.definition.comment.end.css
+>  display: inline-block;
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css support.type.property-name.css
+#         ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.separator.key-value.css
+#          ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css
+#           ^^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css support.constant.property-value.css
+#                       ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.terminator.rule.css
+>  font-family: var(--mono);
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css support.type.property-name.css
+#             ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.separator.key-value.css
+#              ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css
+#               ^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css support.function.css
+#                  ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.begin.bracket.round.css
+#                   ^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css variable.argument.css
+#                         ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.end.bracket.round.css
+#                          ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.terminator.rule.css
+>  font-size: .72rem;
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css support.type.property-name.css
+#           ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.separator.key-value.css
+#            ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css
+#             ^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#                ^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css constant.numeric.css keyword.other.unit.css
+#                   ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.terminator.rule.css
+>  color: var(--accent);
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css support.type.property-name.css
+#       ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.separator.key-value.css
+#        ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css
+#         ^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css support.function.css
+#            ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.begin.bracket.round.css
+#             ^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css variable.argument.css
+#                     ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.end.bracket.round.css
+#                      ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.terminator.rule.css
+>  background: color-mix(in srgb, var(--accent) 10%, transparent);
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css support.type.property-name.css
+#            ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.separator.key-value.css
+#             ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css
+#              ^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css support.function.css
+#                       ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.begin.bracket.round.css
+#                        ^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css support.constant.property-value.css
+#                          ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css
+#                           ^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css support.constant.property-value.css
+#                               ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.separator.list.comma.css
+#                                ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css
+#                                 ^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css meta.function.css support.function.css
+#                                    ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css meta.function.css punctuation.section.function.begin.bracket.round.css
+#                                     ^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css meta.function.css variable.argument.css
+#                                             ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css meta.function.css punctuation.section.function.end.bracket.round.css
+#                                              ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css
+#                                               ^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css constant.numeric.css
+#                                                 ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css constant.numeric.css keyword.other.unit.css
+#                                                  ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.separator.list.comma.css
+#                                                   ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css
+#                                                    ^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css support.constant.property-value.css
+#                                                               ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.end.bracket.round.css
+#                                                                ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.terminator.rule.css
+>  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css support.type.property-name.css
+#        ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.separator.key-value.css
+#         ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css
+#          ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#           ^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css constant.numeric.css keyword.other.unit.css
+#             ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css
+#              ^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css support.constant.property-value.css
+#                   ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css
+#                    ^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css support.function.css
+#                             ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.begin.bracket.round.css
+#                              ^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css support.constant.property-value.css
+#                                ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css
+#                                 ^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css support.constant.property-value.css
+#                                     ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.separator.list.comma.css
+#                                      ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css
+#                                       ^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css meta.function.css support.function.css
+#                                          ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css meta.function.css punctuation.section.function.begin.bracket.round.css
+#                                           ^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css meta.function.css variable.argument.css
+#                                                   ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css meta.function.css punctuation.section.function.end.bracket.round.css
+#                                                    ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css
+#                                                     ^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css constant.numeric.css
+#                                                       ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css constant.numeric.css keyword.other.unit.css
+#                                                        ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.separator.list.comma.css
+#                                                         ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css
+#                                                          ^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css support.constant.property-value.css
+#                                                                     ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css meta.function.css punctuation.section.function.end.bracket.round.css
+#                                                                      ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.terminator.rule.css
+>  border-radius: 999px;
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^^^^^^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css support.type.property-name.css
+#               ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.separator.key-value.css
+#                ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css
+#                 ^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#                    ^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css constant.numeric.css keyword.other.unit.css
+#                      ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.terminator.rule.css
+>  padding: .05rem .45rem;
+#^^ source.ts meta.embedded.block.css.lips
+#  ^^^^^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css support.type.property-name.css
+#         ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.separator.key-value.css
+#          ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css
+#           ^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#              ^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css constant.numeric.css keyword.other.unit.css
+#                 ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css
+#                  ^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css constant.numeric.css
+#                     ^^^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css meta.property-value.css constant.numeric.css keyword.other.unit.css
+#                        ^ source.ts meta.embedded.block.css.lips meta.property-list.declaration.css punctuation.terminator.rule.css
+>`
+#^ source.ts string.template.ts punctuation.definition.string.template.end.ts
+>
+>export default `<span>self.lang = <span @text=self.lang></span></span>`
+#^^^^^^ source.ts keyword.control.export.ts
+#      ^ source.ts
+#       ^^^^^^^ source.ts keyword.control.default.ts
+#              ^ source.ts
+#               ^ source.ts string.template.ts punctuation.definition.string.template.begin.ts
+#                ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                 ^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                     ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#                      ^^^^^^^^^^^^ source.ts meta.embedded.block.lips
+#                                  ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                                   ^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                                       ^ source.ts meta.embedded.block.lips meta.tag.lips
+#                                        ^^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#                                             ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                                              ^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                                                  ^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                                                   ^^^^ source.ts meta.embedded.block.lips meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                                                       ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#                                                        ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                          ^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                                                              ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#                                                               ^^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                                 ^^^^ source.ts meta.embedded.block.lips meta.tag.lips entity.name.tag.lips
+#                                                                     ^ source.ts meta.embedded.block.lips meta.tag.lips punctuation.definition.tag.end.lips
+#                                                                      ^ source.ts string.template.ts punctuation.definition.string.template.end.ts
+>
