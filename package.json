@@ -2,6 +2,7 @@
   "name": "lips-language-tools",
   "private": true,
   "description": "Editor tooling for Lips templates (RFC-009)",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/lips-js/language-tools"

@@ -92,3 +92,7 @@ Code and run **Lips extension** (F5).
 
 The TypeScript grammar used by the tests comes from `tm-grammars`, pinned, so
 a snapshot changes only when a grammar here does.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
