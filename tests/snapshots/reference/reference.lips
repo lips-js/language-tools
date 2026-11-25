@@ -1,0 +1,10 @@
+<!-- Every html example of docs/reference.md in @lipsjs/lips (branch audit/surface-audit, 26177ce), in order. -->
+
+<!-- `<log>` · compiles -->
+<log( 'rows:', state.rows.length )/>
+
+<!-- Parts and plugins · from demos/app/client/pages/parts.ts -->
+<popover open=state.open on-change( setOpen )>
+  <popover-trigger class="ghost" haspopup="menu"><span>Actions ▾</span></popover-trigger>
+  <popover-menu items=static.actions class="menu" item="menu-item" on-select( run )/>
+</popover>

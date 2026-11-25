@@ -1,0 +1,58 @@
+<!-- SYNTAX TEST "source.lips" "attributes: literal, interpolated, unquoted and braced values, booleans, [args], spread (parseAttrs, parseAttrValue, readUnquotedValue)"
+      <input type="range" value=state.query disabled !checked data-x={ a + b }>
+<!--         ^^^^ entity.other.attribute-name.lips
+<!--             ^ punctuation.separator.key-value.lips
+<!--               ^^^^^ string.quoted.double.lips
+<!--                      ^^^^^ entity.other.attribute-name.lips
+<!--                            ^^^^^ meta.embedded.expression.lips variable.other.object.ts
+<!--                                  ^^^^^ meta.embedded.expression.lips variable.other.property.ts
+<!--                                        ^^^^^^^^ entity.other.attribute-name.lips
+<!--                                                 ^ keyword.operator.negation.lips
+<!--                                                  ^^^^^^^ entity.other.attribute-name.lips
+<!--                                                          ^^^^^^ entity.other.attribute-name.lips
+<!--                                                                 ^ punctuation.section.embedded.begin.lips
+<!--                                                                   ^ meta.embedded.expression.lips
+<!--                                                                     ^ meta.embedded.expression.lips keyword.operator.arithmetic.ts
+<!--                                                                         ^ punctuation.section.embedded.end.lips
+<!--                                                                          ^ punctuation.definition.tag.end.lips
+      <case is=[ 'viewer', 'guest' ] x=fn( a, b ) y=a>b>
+<!--        ^^ entity.other.attribute-name.lips
+<!--           ^ meta.embedded.expression.lips meta.array.literal.ts
+<!--                       ^^^^^^^ meta.embedded.expression.lips string.quoted.single.ts
+<!--                               ^ meta.embedded.expression.lips
+<!--                                 ^ entity.other.attribute-name.lips
+<!--                                   ^^ meta.embedded.expression.lips entity.name.function.ts
+<!--                                          ^ meta.embedded.expression.lips
+<!--                                            ^ meta.embedded.expression.lips
+<!--                                              ^ entity.other.attribute-name.lips
+<!--                                                ^ meta.embedded.expression.lips
+<!--                                                 ^ punctuation.definition.tag.end.lips
+<!--                                                  ^ - meta.embedded.expression.lips
+      <a href=input.url/>
+<!--          ^^^^^ meta.embedded.expression.lips
+<!--                ^^^ meta.embedded.expression.lips
+<!--                   ^^ punctuation.definition.tag.end.lips
+      <for [item, i] in=state.rows from=1 to=state.n by="id">
+<!--       ^ meta.arguments.lips punctuation.definition.arguments.begin.lips
+<!--        ^^^^ meta.arguments.lips variable.parameter.lips
+<!--            ^ punctuation.separator.comma.lips
+<!--              ^ variable.parameter.lips
+<!--               ^ punctuation.definition.arguments.end.lips
+<!--                 ^^ entity.other.attribute-name.lips
+<!--                    ^^^^^ meta.embedded.expression.lips
+<!--                               ^^^^ entity.other.attribute-name.lips
+<!--                                    ^ meta.embedded.expression.lips constant.numeric.decimal.ts
+<!--                                      ^^ entity.other.attribute-name.lips
+<!--                                         ^^^^^ meta.embedded.expression.lips
+<!--                                                 ^^ entity.other.attribute-name.lips
+<!--                                                     ^^ string.quoted.double.lips
+      <p ...state.extra ...{ a: 1 } class="x">
+<!--     ^^^ meta.attribute.spread.lips keyword.operator.spread.lips
+<!--        ^^^^^ meta.attribute.spread.lips meta.embedded.expression.lips variable.other.object.ts
+<!--              ^^^^^ meta.embedded.expression.lips
+<!--                    ^^^ keyword.operator.spread.lips
+<!--                         ^ meta.embedded.expression.lips meta.objectliteral.ts
+<!--                                ^^^^^ entity.other.attribute-name.lips - meta.embedded.expression.lips
+      <b name = "x">
+<!--     ^^^^ entity.other.attribute-name.lips - punctuation.separator.key-value.lips
+<!--          ^ - punctuation.separator.key-value.lips

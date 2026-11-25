@@ -1,0 +1,97 @@
+{
+  "$comment": "Lips templates and stylesheets inside TypeScript and JavaScript, at the markers of RFC-009 D2 only: the default / macros / stylesheet fields of a component, export default and export const macros|stylesheet in a module (const without export in a .lips script), and a /* lips */ comment before a backtick. The marker and its backtick must share a line.",
+  "scopeName": "inline.lips",
+  "injectionSelector": "L:source.ts -comment -string, L:source.js -comment -string, L:source.tsx -comment -string, L:source.js.jsx -comment -string",
+  "patterns": [
+    { "include": "#field-template" },
+    { "include": "#field-stylesheet" },
+    { "include": "#export-default" },
+    { "include": "#module-template" },
+    { "include": "#module-stylesheet" },
+    { "include": "#comment-marked" }
+  ],
+  "repository": {
+    "field-template": {
+      "begin": "(?<![\\w$.])(default|macros)\\s*(:)\\s*(`)",
+      "beginCaptures": {
+        "1": { "name": "meta.object-literal.key.ts" },
+        "2": { "name": "meta.object-literal.key.ts punctuation.separator.key-value.ts" },
+        "3": { "name": "string.template.ts punctuation.definition.string.template.begin.ts" }
+      },
+      "end": "(?<!\\\\)`",
+      "endCaptures": { "0": { "name": "string.template.ts punctuation.definition.string.template.end.ts" } },
+      "contentName": "meta.embedded.block.lips",
+      "patterns": [ { "include": "source.lips" } ]
+    },
+    "field-stylesheet": {
+      "begin": "(?<![\\w$.])(stylesheet)\\s*(:)\\s*(`)",
+      "beginCaptures": {
+        "1": { "name": "meta.object-literal.key.ts" },
+        "2": { "name": "meta.object-literal.key.ts punctuation.separator.key-value.ts" },
+        "3": { "name": "string.template.ts punctuation.definition.string.template.begin.ts" }
+      },
+      "end": "(?<!\\\\)`",
+      "endCaptures": { "0": { "name": "string.template.ts punctuation.definition.string.template.end.ts" } },
+      "contentName": "meta.embedded.block.css.lips",
+      "patterns": [ { "include": "source.css.lips" } ]
+    },
+    "export-default": {
+      "begin": "(?<![\\w$.])(export)\\s+(default)\\s*(`)",
+      "beginCaptures": {
+        "1": { "name": "keyword.control.export.ts" },
+        "2": { "name": "keyword.control.default.ts" },
+        "3": { "name": "string.template.ts punctuation.definition.string.template.begin.ts" }
+      },
+      "end": "(?<!\\\\)`",
+      "endCaptures": { "0": { "name": "string.template.ts punctuation.definition.string.template.end.ts" } },
+      "contentName": "meta.embedded.block.lips",
+      "patterns": [ { "include": "source.lips" } ]
+    },
+    "module-template": {
+      "begin": "(?<![\\w$.])(?:(export)\\s+)?(const|let|var)\\s+(macros)\\s*(?:(:)\\s*(string)\\s*)?(=)\\s*(`)",
+      "beginCaptures": {
+        "1": { "name": "keyword.control.export.ts" },
+        "2": { "name": "storage.type.ts" },
+        "3": { "name": "variable.other.constant.ts" },
+        "4": { "name": "keyword.operator.type.annotation.ts" },
+        "5": { "name": "support.type.primitive.ts" },
+        "6": { "name": "keyword.operator.assignment.ts" },
+        "7": { "name": "string.template.ts punctuation.definition.string.template.begin.ts" }
+      },
+      "end": "(?<!\\\\)`",
+      "endCaptures": { "0": { "name": "string.template.ts punctuation.definition.string.template.end.ts" } },
+      "contentName": "meta.embedded.block.lips",
+      "patterns": [ { "include": "source.lips" } ]
+    },
+    "module-stylesheet": {
+      "begin": "(?<![\\w$.])(?:(export)\\s+)?(const|let|var)\\s+(stylesheet)\\s*(?:(:)\\s*(string)\\s*)?(=)\\s*(`)",
+      "beginCaptures": {
+        "1": { "name": "keyword.control.export.ts" },
+        "2": { "name": "storage.type.ts" },
+        "3": { "name": "variable.other.constant.ts" },
+        "4": { "name": "keyword.operator.type.annotation.ts" },
+        "5": { "name": "support.type.primitive.ts" },
+        "6": { "name": "keyword.operator.assignment.ts" },
+        "7": { "name": "string.template.ts punctuation.definition.string.template.begin.ts" }
+      },
+      "end": "(?<!\\\\)`",
+      "endCaptures": { "0": { "name": "string.template.ts punctuation.definition.string.template.end.ts" } },
+      "contentName": "meta.embedded.block.css.lips",
+      "patterns": [ { "include": "source.css.lips" } ]
+    },
+    "comment-marked": {
+      "begin": "((/\\*)\\s*(lips)\\s*(\\*/))\\s*(`)",
+      "beginCaptures": {
+        "1": { "name": "comment.block.ts" },
+        "2": { "name": "punctuation.definition.comment.ts" },
+        "3": { "name": "storage.type.annotation.lips" },
+        "4": { "name": "punctuation.definition.comment.ts" },
+        "5": { "name": "string.template.ts punctuation.definition.string.template.begin.ts" }
+      },
+      "end": "(?<!\\\\)`",
+      "endCaptures": { "0": { "name": "string.template.ts punctuation.definition.string.template.end.ts" } },
+      "contentName": "meta.embedded.block.lips",
+      "patterns": [ { "include": "source.lips" } ]
+    }
+  }
+}

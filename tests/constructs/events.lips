@@ -1,0 +1,35 @@
+<!-- SYNTAX TEST "source.lips" "events: on-<event>( handler, …args ), modifiers, callables (parseAttrs callable form)"
+      <button on-click(step, -1) on-click.stop(() => state.n++) on-keydown.capture.stop( go )>
+<!--          ^^^^^^^^ entity.other.attribute-name.event.lips
+<!--                  ^ punctuation.section.arguments.begin.lips
+<!--                   ^^^^ meta.embedded.expression.lips variable.other.readwrite.ts
+<!--                         ^ meta.embedded.expression.lips keyword.operator.arithmetic.ts
+<!--                           ^ punctuation.section.arguments.end.lips
+<!--                             ^^^^^^^^ entity.other.attribute-name.event.lips
+<!--                                     ^^^^^ storage.modifier.event.lips
+<!--                                              ^^ meta.embedded.expression.lips storage.type.function.arrow.ts
+<!--                                                        ^^ meta.embedded.expression.lips
+<!--                                                            ^^^^^^^^^^ entity.other.attribute-name.event.lips
+<!--                                                                      ^^^^^^^^^^^^^ storage.modifier.event.lips
+<!--                                                                                     ^^ meta.embedded.expression.lips
+<!--                                                                                         ^ punctuation.definition.tag.end.lips
+      <input on-input(( e ) => state.v = Number( e.target.value ))>
+<!--         ^^^^^^^^ entity.other.attribute-name.event.lips
+<!--                    ^ meta.embedded.expression.lips
+<!--                                     ^^^^^^ meta.embedded.expression.lips entity.name.function.ts
+<!--                                                      ^^^^^ meta.embedded.expression.lips
+<!--                                                            ^^ - punctuation.definition.tag.end.lips
+<!--                                                              ^ punctuation.definition.tag.end.lips
+      <pick-one on-picked( n => state.got = n )/>
+<!--            ^^^^^^^^^ entity.other.attribute-name.event.lips
+<!--                            ^^^^^ meta.embedded.expression.lips
+<!--                                           ^^ punctuation.definition.tag.end.lips
+      <b on-click="go">LIPS-C020</b>
+<!--     ^^^^^^^^ entity.other.attribute-name.event.lips
+<!--               ^^ string.quoted.double.lips
+      <async await( fetch( url ) )>
+<!--         ^^^^^ keyword.control.flow.await.lips
+<!--                ^^^^^ meta.embedded.expression.lips
+<!--                       ^^^ meta.embedded.expression.lips
+<!--                           ^ meta.embedded.expression.lips meta.brace.round.ts
+<!--                             ^ punctuation.section.arguments.end.lips

@@ -1,41 +1,22 @@
 {
-  "name": "lips",
-  "displayName": "lips-language",
-  "description": "Lips markup syntax highlighter",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.98.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [
-      {
-        "id": "lips",
-        "aliases": ["Lips", "lips"],
-        "extensions": [],
-        "configuration": "./language-configuration.json",
-        "embeddedLanguages": {
-          "meta.embedded.inline.html": "html"
-        }
-      }
-    ],
-    "grammars": [
-      {
-        "language": "lips",
-        "scopeName": "source.lips",
-        "path": "./syntaxes/lips.tmLanguage.json"
-      },
-      {
-        "injectTo": ["source.ts", "source.js"],
-        "scopeName": "lips.template.injection",
-        "path": "./syntaxes/lips-injection.json"
-      }
-    ]
-  },
+  "name": "lips-language-tools",
+  "private": true,
+  "description": "Editor tooling for Lips templates (RFC-009)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/lips-js/syntax-highligther"
+    "url": "https://github.com/lips-js/language-tools"
+  },
+  "scripts": {
+    "build": "npm run build --prefix extensions/vscode",
+    "test": "npm run build && npm run test:constructs && npm run test:snapshots",
+    "test:constructs": "vscode-tmgrammar-test --config extensions/vscode/package.json -g node_modules/tm-grammars/grammars/typescript.json -g node_modules/tm-grammars/grammars/javascript.json \"tests/constructs/*\"",
+    "test:snapshots": "npm run snap:lips && npm run snap:ts",
+    "snap:lips": "vscode-tmgrammar-snap --config extensions/vscode/package.json -g node_modules/tm-grammars/grammars/typescript.json \"tests/snapshots/**/*.lips\"",
+    "snap:ts": "vscode-tmgrammar-snap --config extensions/vscode/package.json -g node_modules/tm-grammars/grammars/typescript.json -s source.ts \"tests/snapshots/**/*.ts\"",
+    "mutate": "node scripts/mutate.mjs"
+  },
+  "devDependencies": {
+    "tm-grammars": "1.32.22",
+    "vscode-tmgrammar-test": "0.1.3"
   }
 }

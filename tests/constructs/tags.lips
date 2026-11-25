@@ -1,0 +1,98 @@
+<!-- SYNTAX TEST "source.lips" "tags: HTML and SVG elements, components, syntax tags, closing forms, comments (parser.ts parseTag; tags.ts)"
+      <div><nav-bar/><Counter></Counter></div>
+<!--  ^ punctuation.definition.tag.begin.lips
+<!--   ^^^ entity.name.tag.lips
+<!--      ^ punctuation.definition.tag.end.lips
+<!--        ^^^^^^^ entity.name.tag.component.lips support.class.component.lips
+<!--               ^^ punctuation.definition.tag.end.lips
+<!--                  ^^^^^^^ entity.name.tag.component.lips
+<!--                          ^^ punctuation.definition.tag.begin.lips
+<!--                            ^^^^^^^ entity.name.tag.component.lips
+<!--                                      ^^^ entity.name.tag.lips
+      <svg><path d="M0 0"/><lineargradient/><tool/></svg>
+<!--   ^^^ entity.name.tag.lips
+<!--        ^^^^ entity.name.tag.lips
+<!--                        ^^^^^^^^^^^^^^ entity.name.tag.lips
+<!--                                         ^^^^ entity.name.tag.component.lips
+      <IF( x )>a</IF><Else>b</else><else-if( y )></else-if>
+<!--   ^^ keyword.control.flow.lips
+<!--              ^^ keyword.control.flow.lips
+<!--                  ^^^^ keyword.control.flow.lips
+<!--                          ^^^^ keyword.control.flow.lips
+<!--                                ^^^^^^^ keyword.control.flow.lips
+<!--                                               ^^^^^^^ keyword.control.flow.lips
+      <switch( x )><case is=1>a</case><default>b</default></switch>
+<!--   ^^^^^^ keyword.control.flow.lips
+<!--                ^^^^ keyword.control.flow.lips
+<!--                                   ^^^^^^^ keyword.control.flow.lips
+<!--                                              ^^^^^^^ keyword.control.flow.lips
+<!--                                                        ^^^^^^ keyword.control.flow.lips
+      <for [x] in=xs></for>
+<!--   ^^^ keyword.control.flow.lips
+<!--                   ^^^ keyword.control.flow.lips
+      <async await( p )><loading>…</loading><then [v]>{v}</then><catch [e]>{e}</catch></async>
+<!--   ^^^^^ keyword.control.flow.lips
+<!--                     ^^^^^^^ keyword.control.flow.lips
+<!--                                ^^^^^^^ keyword.control.flow.lips
+<!--                                         ^^^^ keyword.control.flow.lips
+<!--                                                       ^^^^ keyword.control.flow.lips
+<!--                                                             ^^^^^ keyword.control.flow.lips
+<!--                                                                            ^^^^^ keyword.control.flow.lips
+<!--                                                                                    ^^^^^ keyword.control.flow.lips
+      <let a=1/><const b=2/><macro name="m"></macro><log( a )/>
+<!--   ^^^ storage.type.lips
+<!--             ^^^^^ storage.type.lips
+<!--                         ^^^^^ storage.type.lips
+<!--                                          ^^^^^ storage.type.lips
+<!--                                                 ^^^ support.function.log.lips
+      <context theme="dark"><i18n lang="fr"></i18n></context>
+<!--   ^^^^^^^ keyword.other.scope.lips
+<!--                         ^^^^ keyword.other.scope.lips
+<!--                                          ^^^^ keyword.other.scope.lips
+<!--                                                 ^^^^^^^ keyword.other.scope.lips
+      <iffy/><format-if/>
+<!--   ^^^^ entity.name.tag.component.lips
+<!--          ^^^^^^^^^ entity.name.tag.component.lips
+      <>fragment</>  <{state.tag}>dynamic</>
+<!--  ^ meta.tag.fragment.lips punctuation.definition.tag.begin.lips
+<!--   ^ meta.tag.fragment.lips punctuation.definition.tag.end.lips
+<!--            ^^ meta.tag.fragment.lips punctuation.definition.tag.begin.lips
+<!--              ^ meta.tag.fragment.lips punctuation.definition.tag.end.lips
+<!--                 ^ meta.tag.dynamic.lips punctuation.definition.tag.begin.lips
+<!--                  ^ meta.tag-name.dynamic.lips punctuation.section.embedded.begin.lips
+<!--                   ^^^^^ meta.tag-name.dynamic.lips meta.embedded.expression.lips variable.other.object.ts
+<!--                            ^ punctuation.section.embedded.end.lips
+<!--                             ^ meta.tag.dynamic.lips punctuation.definition.tag.end.lips
+<!--                                     ^^^ meta.tag.fragment.lips
+      <{ input.renderer } [item] row=item/>
+<!--     ^^^^^ meta.embedded.expression.lips
+<!--                      ^ meta.arguments.lips
+<!--                             ^^^ entity.other.attribute-name.lips
+<!--                                     ^^ meta.tag.dynamic.lips punctuation.definition.tag.end.lips
+      </div >
+<!--  ^^ punctuation.definition.tag.begin.lips
+<!--    ^^^ entity.name.tag.lips
+<!--        ^ punctuation.definition.tag.end.lips
+      <!-- a comment {not a slot} <b> -->
+<!--  ^^^^ comment.block.lips punctuation.definition.comment.begin.lips
+<!--                 ^^^^^^^^^^^^ comment.block.lips - meta.embedded.expression.lips
+<!--                              ^^^ comment.block.lips - entity.name.tag.lips
+<!--                                  ^^^ comment.block.lips punctuation.definition.comment.end.lips
+      <!-- a comment
+<!--  ^^^^ comment.block.lips
+      over two lines <b> -->
+<!--  ^^^^ comment.block.lips
+<!--                 ^^^ comment.block.lips - meta.tag.lips
+<!--                     ^^^ punctuation.definition.comment.end.lips
+      <span( x )>LIPS-P011</span> a < b
+<!--       ^^^^^ invalid.illegal.head.lips
+<!--             ^^^^ - invalid
+<!--                      ^^^^^^^ meta.tag.lips - invalid
+<!--                                ^ invalid.illegal.bad-angle-bracket.lips
+      text &amp; &#169; &#xA9; &copy; & alone
+<!--  ^^^^ source.lips - meta.tag.lips
+<!--       ^^^^^ constant.character.entity.lips
+<!--             ^^^^^^ constant.character.entity.lips
+<!--                    ^^^^^^ constant.character.entity.lips
+<!--                           ^^^^^^ constant.character.entity.lips
+<!--                                  ^^^^^^^ - constant.character.entity.lips

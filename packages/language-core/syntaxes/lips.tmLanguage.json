@@ -1,0 +1,346 @@
+{
+  "$comment": "Lips template markup. Mirrors src/ir/parser.ts of @lipsjs/lips: each rule names the parser path it follows. Every begin/end rule also ends at an unescaped backtick, so a template left open in a .ts file stops at its string's end instead of colouring the rest of the file.",
+  "name": "Lips template",
+  "scopeName": "source.lips",
+  "patterns": [
+    { "include": "#markup" }
+  ],
+  "repository": {
+    "markup": {
+      "patterns": [
+        { "include": "#comment" },
+        { "include": "#fragment" },
+        { "include": "#close-tag" },
+        { "include": "#dynamic-tag" },
+        { "include": "#open-tag" },
+        { "include": "#invalid-angle" },
+        { "include": "#slot" },
+        { "include": "#entity" }
+      ]
+    },
+
+    "comment": {
+      "$comment": "parseTag: <!-- … -->",
+      "name": "comment.block.lips",
+      "begin": "<!--",
+      "beginCaptures": { "0": { "name": "punctuation.definition.comment.begin.lips" } },
+      "end": "-->|(?=(?<!\\\\)`)",
+      "endCaptures": { "0": { "name": "punctuation.definition.comment.end.lips" } }
+    },
+
+    "fragment": {
+      "$comment": "parseTag: <> opens a fragment; closeStatus: </> closes a fragment or a dynamic tag",
+      "name": "meta.tag.fragment.lips",
+      "match": "(</?)(>)",
+      "captures": {
+        "1": { "name": "punctuation.definition.tag.begin.lips" },
+        "2": { "name": "punctuation.definition.tag.end.lips" }
+      }
+    },
+
+    "close-tag": {
+      "$comment": "closeStatus: </name>, spaces allowed before >",
+      "name": "meta.tag.lips",
+      "match": "(</)([A-Za-z0-9_-]+)\\s*(>)",
+      "captures": {
+        "1": { "name": "punctuation.definition.tag.begin.lips" },
+        "2": { "patterns": [ { "include": "#tag-name" } ] },
+        "3": { "name": "punctuation.definition.tag.end.lips" }
+      }
+    },
+
+    "dynamic-tag": {
+      "$comment": "parseTag: <{expr} …> — closed by </>",
+      "name": "meta.tag.dynamic.lips",
+      "begin": "(<)(?=\\{)",
+      "beginCaptures": { "1": { "name": "punctuation.definition.tag.begin.lips" } },
+      "end": "(/?>)|(?=(?<!\\\\)`)",
+      "endCaptures": { "1": { "name": "punctuation.definition.tag.end.lips" } },
+      "patterns": [
+        {
+          "name": "meta.tag-name.dynamic.lips meta.embedded.expression.lips",
+          "begin": "\\G\\{",
+          "beginCaptures": { "0": { "name": "punctuation.section.embedded.begin.lips" } },
+          "end": "\\}|(?=(?<!\\\\)`)",
+          "endCaptures": { "0": { "name": "punctuation.section.embedded.end.lips" } },
+          "patterns": [ { "include": "#expression" } ]
+        },
+        { "include": "#attributes" }
+      ]
+    },
+
+    "open-tag": {
+      "$comment": "parseTag: < name [head] attrs (> | />). A name starts with a letter and holds [A-Za-z0-9_-]",
+      "name": "meta.tag.lips",
+      "begin": "(<)([A-Za-z][A-Za-z0-9_-]*)",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.lips" },
+        "2": { "patterns": [ { "include": "#tag-name" } ] }
+      },
+      "end": "(/?>)|(?=(?<!\\\\)`)",
+      "endCaptures": { "1": { "name": "punctuation.definition.tag.end.lips" } },
+      "patterns": [
+        { "include": "#head" },
+        { "include": "#invalid-head" },
+        { "include": "#attributes" }
+      ]
+    },
+
+    "tag-name": {
+      "$comment": "tags.ts: CONTROL_TAGS, ARM_TAGS, macro, HTML_TAGS; anything else is a component (or a macro call). Names are read lowercased.",
+      "patterns": [
+        {
+          "name": "keyword.control.flow.lips",
+          "match": "(?i)(?<![A-Za-z0-9_-])(?:if|else-if|else|switch|case|default|for|async|loading|then|catch)(?![A-Za-z0-9_-])"
+        },
+        {
+          "name": "storage.type.lips",
+          "match": "(?i)(?<![A-Za-z0-9_-])(?:let|const|macro)(?![A-Za-z0-9_-])"
+        },
+        {
+          "name": "support.function.log.lips",
+          "match": "(?i)(?<![A-Za-z0-9_-])log(?![A-Za-z0-9_-])"
+        },
+        {
+          "name": "keyword.other.scope.lips",
+          "match": "(?i)(?<![A-Za-z0-9_-])(?:context|i18n)(?![A-Za-z0-9_-])"
+        },
+        {
+          "name": "entity.name.tag.lips",
+          "match": "(?i)(?<![A-Za-z0-9_-])(?:a|abbr|address|area|article|aside|audio|b|base|bdi|bdo|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|data|datalist|dd|del|details|dfn|dialog|div|dl|dt|em|embed|fieldset|figcaption|figure|footer|form|h1|h2|h3|h4|h5|h6|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|main|map|mark|menu|meta|meter|nav|noscript|object|ol|optgroup|option|output|p|picture|pre|progress|q|rp|rt|ruby|s|samp|script|section|select|slot|small|source|span|strong|style|sub|summary|sup|table|tbody|td|template|textarea|tfoot|th|thead|time|title|tr|track|u|ul|var|video|wbr|svg|circle|clippath|defs|ellipse|foreignobject|g|image|line|lineargradient|marker|mask|path|pattern|polygon|polyline|radialgradient|rect|stop|symbol|text|tspan|use)(?![A-Za-z0-9_-])"
+        },
+        {
+          "name": "entity.name.tag.component.lips support.class.component.lips",
+          "match": "[A-Za-z0-9_-]+"
+        }
+      ]
+    },
+
+    "head": {
+      "$comment": "parseTag: HEAD_SUGAR_TAGS — <if( … )>, <else-if( … )>, <switch( … )>, <log( … )>",
+      "name": "meta.head.lips",
+      "begin": "(?<=<(?i:if|else-if|switch|log))\\(",
+      "beginCaptures": { "0": { "name": "punctuation.section.head.begin.lips" } },
+      "end": "\\)|(?=(?<!\\\\)`)",
+      "endCaptures": { "0": { "name": "punctuation.section.head.end.lips" } },
+      "contentName": "meta.embedded.expression.lips",
+      "patterns": [ { "include": "#expression" } ]
+    },
+
+    "invalid-head": {
+      "$comment": "parseTag: a head on any other tag is LIPS-P011",
+      "name": "invalid.illegal.head.lips",
+      "begin": "\\G\\(",
+      "end": "\\)|(?=(?<!\\\\)`)",
+      "patterns": [ { "include": "#expression" } ]
+    },
+
+    "invalid-angle": {
+      "$comment": "parseTag: '<' not followed by a tag name is LIPS-P002 — write &lt;",
+      "name": "invalid.illegal.bad-angle-bracket.lips",
+      "match": "<(?![A-Za-z{>/]|!--)"
+    },
+
+    "attributes": {
+      "$comment": "parseAttrs, in its order: spread, [args], callable, valued (quoted | braced | unquoted), bare boolean",
+      "patterns": [
+        { "include": "#spread" },
+        { "include": "#arguments" },
+        { "include": "#attribute-callable" },
+        { "include": "#attribute-format" },
+        { "include": "#attribute-quoted" },
+        { "include": "#attribute-braced" },
+        { "include": "#attribute-unquoted" },
+        { "include": "#attribute-boolean" }
+      ]
+    },
+
+    "attribute-name": {
+      "$comment": "A name is [^\\s=/>()]+. on-<event>[.modifier…] is an event; @text @html @ref @format are directives; i18n and i18n-<attr> translate",
+      "patterns": [
+        {
+          "match": "(on-[^\\s=/>().`]+)((?:\\.[^\\s=/>().`]+)*)",
+          "captures": {
+            "1": { "name": "entity.other.attribute-name.event.lips" },
+            "2": { "name": "storage.modifier.event.lips" }
+          }
+        },
+        {
+          "name": "entity.other.attribute-name.directive.lips",
+          "match": "@(?:text|html|ref|format)(?![^\\s=/>()`])"
+        },
+        {
+          "name": "entity.other.attribute-name.i18n.lips",
+          "match": "i18n(?:-[^\\s=/>()`]+)?(?![^\\s=/>()`])"
+        },
+        {
+          "name": "keyword.control.flow.await.lips",
+          "match": "await(?![^\\s=/>()`])"
+        },
+        {
+          "name": "entity.other.attribute-name.lips",
+          "match": "[^\\s=/>()`]+"
+        }
+      ]
+    },
+
+    "spread": {
+      "$comment": "parseAttrs: ...expr — read like an unquoted value",
+      "name": "meta.attribute.spread.lips",
+      "begin": "\\.\\.\\.",
+      "beginCaptures": { "0": { "name": "keyword.operator.spread.lips" } },
+      "end": "(?=[\\s>`]|/>)",
+      "contentName": "meta.embedded.expression.lips",
+      "patterns": [ { "include": "#expression" } ]
+    },
+
+    "arguments": {
+      "$comment": "parseAttrs: [a, b] — names a construct declares (<for>, <then>, <catch>, <macro>, a slot's arguments)",
+      "name": "meta.arguments.lips",
+      "begin": "\\[",
+      "beginCaptures": { "0": { "name": "punctuation.definition.arguments.begin.lips" } },
+      "end": "\\]|(?=(?<!\\\\)`)",
+      "endCaptures": { "0": { "name": "punctuation.definition.arguments.end.lips" } },
+      "patterns": [
+        { "name": "punctuation.separator.comma.lips", "match": "," },
+        { "name": "variable.parameter.lips", "match": "[^\\s,\\]`]+" }
+      ]
+    },
+
+    "attribute-callable": {
+      "$comment": "parseAttrs: name( … ) — on-<event>( handler, …args ) is an event, anything else a callable (await( … ))",
+      "name": "meta.attribute.lips",
+      "begin": "([^\\s=/>()`\\[]+)(\\()",
+      "beginCaptures": {
+        "1": { "patterns": [ { "include": "#attribute-name" } ] },
+        "2": { "name": "punctuation.section.arguments.begin.lips" }
+      },
+      "end": "\\)|(?=(?<!\\\\)`)",
+      "endCaptures": { "0": { "name": "punctuation.section.arguments.end.lips" } },
+      "contentName": "meta.embedded.expression.lips",
+      "patterns": [ { "include": "#expression" } ]
+    },
+
+    "attribute-format": {
+      "$comment": "@format=\"key, { params }\": the braces are the params object (compiler: LIPS-C012), not a slot",
+      "name": "meta.attribute.lips",
+      "begin": "(@format)(=)([\"'])",
+      "beginCaptures": {
+        "1": { "name": "entity.other.attribute-name.directive.lips" },
+        "2": { "name": "punctuation.separator.key-value.lips" },
+        "3": { "name": "string.quoted.lips punctuation.definition.string.begin.lips" }
+      },
+      "end": "(\\3)|(?=(?<!\\\\)`)",
+      "endCaptures": { "1": { "name": "string.quoted.lips punctuation.definition.string.end.lips" } },
+      "patterns": [
+        {
+          "name": "meta.embedded.expression.lips",
+          "begin": "\\{",
+          "beginCaptures": { "0": { "name": "punctuation.section.embedded.begin.lips" } },
+          "end": "\\}|(?=(?<!\\\\)`)",
+          "endCaptures": { "0": { "name": "punctuation.section.embedded.end.lips" } },
+          "patterns": [ { "include": "source.ts#object-member" } ]
+        },
+        { "include": "#entity" },
+        { "name": "string.quoted.lips", "match": "(?:[^\"'{&`]|(?<=\\\\)`)+|&" }
+      ]
+    },
+
+    "attribute-quoted": {
+      "$comment": "parseAttrValue: name=\"text\" is literal, name=\"a {expr} b\" interpolated. No space around '='",
+      "name": "meta.attribute.lips",
+      "begin": "([^\\s=/>()`\\[]+)(=)(?=[\"'])",
+      "beginCaptures": {
+        "1": { "patterns": [ { "include": "#attribute-name" } ] },
+        "2": { "name": "punctuation.separator.key-value.lips" }
+      },
+      "end": "(?<=[\"'])|(?=(?<!\\\\)`)",
+      "patterns": [
+        { "include": "#string-double" },
+        { "include": "#string-single" }
+      ]
+    },
+
+    "string-double": {
+      "begin": "\"",
+      "beginCaptures": { "0": { "name": "string.quoted.double.lips punctuation.definition.string.begin.lips" } },
+      "end": "\"|(?=(?<!\\\\)`)",
+      "endCaptures": { "0": { "name": "string.quoted.double.lips punctuation.definition.string.end.lips" } },
+      "patterns": [
+        { "include": "#slot" },
+        { "include": "#entity" },
+        { "name": "string.quoted.double.lips", "match": "(?:[^\"{&`]|(?<=\\\\)`)+|&" }
+      ]
+    },
+
+    "string-single": {
+      "begin": "'",
+      "beginCaptures": { "0": { "name": "string.quoted.single.lips punctuation.definition.string.begin.lips" } },
+      "end": "'|(?=(?<!\\\\)`)",
+      "endCaptures": { "0": { "name": "string.quoted.single.lips punctuation.definition.string.end.lips" } },
+      "patterns": [
+        { "include": "#slot" },
+        { "include": "#entity" },
+        { "name": "string.quoted.single.lips", "match": "(?:[^'{&`]|(?<=\\\\)`)+|&" }
+      ]
+    },
+
+    "attribute-braced": {
+      "$comment": "parseAttrValue: name={ expr } — spaces allowed",
+      "name": "meta.attribute.lips",
+      "begin": "([^\\s=/>()`\\[]+)(=)(\\{)",
+      "beginCaptures": {
+        "1": { "patterns": [ { "include": "#attribute-name" } ] },
+        "2": { "name": "punctuation.separator.key-value.lips" },
+        "3": { "name": "punctuation.section.embedded.begin.lips" }
+      },
+      "end": "\\}|(?=(?<!\\\\)`)",
+      "endCaptures": { "0": { "name": "punctuation.section.embedded.end.lips" } },
+      "contentName": "meta.embedded.expression.lips",
+      "patterns": [ { "include": "#expression" } ]
+    },
+
+    "attribute-unquoted": {
+      "$comment": "readUnquotedValue: name=expr — ends at whitespace, '>' or '/>' outside brackets and strings",
+      "name": "meta.attribute.lips",
+      "begin": "([^\\s=/>()`\\[]+)(=)(?![\\s>\"'{`]|/>)",
+      "beginCaptures": {
+        "1": { "patterns": [ { "include": "#attribute-name" } ] },
+        "2": { "name": "punctuation.separator.key-value.lips" }
+      },
+      "end": "(?=[\\s>`]|/>)",
+      "contentName": "meta.embedded.expression.lips",
+      "patterns": [ { "include": "#expression" } ]
+    },
+
+    "attribute-boolean": {
+      "$comment": "parseAttrs: name is true, !name false",
+      "name": "meta.attribute.lips",
+      "match": "(!)?([^\\s=/>()`\\[]+)",
+      "captures": {
+        "1": { "name": "keyword.operator.negation.lips" },
+        "2": { "patterns": [ { "include": "#attribute-name" } ] }
+      }
+    },
+
+    "slot": {
+      "$comment": "parseText / parseAttrValue: {expr}, balanced; strings inside are opaque",
+      "name": "meta.embedded.expression.lips",
+      "begin": "\\{",
+      "beginCaptures": { "0": { "name": "punctuation.section.embedded.begin.lips" } },
+      "end": "\\}|(?=(?<!\\\\)`)",
+      "endCaptures": { "0": { "name": "punctuation.section.embedded.end.lips" } },
+      "patterns": [ { "include": "#expression" } ]
+    },
+
+    "entity": {
+      "$comment": "decodeEntities: &#123; &#x7B; &name;",
+      "name": "constant.character.entity.lips",
+      "match": "&(?:#\\d+|#[xX][0-9a-fA-F]+|[A-Za-z][A-Za-z0-9]*);"
+    },
+
+    "expression": {
+      "patterns": [ { "include": "source.ts#expression" } ]
+    }
+  }
+}

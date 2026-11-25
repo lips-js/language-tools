@@ -1,0 +1,965 @@
+>import type { Handlers, Shape } from '../src'
+#^^^^^^ source.lips.sfc meta.script.lips source.ts meta.import.ts keyword.control.import.ts
+#      ^ source.lips.sfc meta.script.lips source.ts meta.import.ts
+#       ^^^^ source.lips.sfc meta.script.lips source.ts meta.import.ts keyword.control.type.ts
+#           ^ source.lips.sfc meta.script.lips source.ts meta.import.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.import.ts meta.block.ts punctuation.definition.block.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.import.ts meta.block.ts
+#              ^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.import.ts meta.block.ts variable.other.readwrite.alias.ts
+#                      ^ source.lips.sfc meta.script.lips source.ts meta.import.ts meta.block.ts punctuation.separator.comma.ts
+#                       ^ source.lips.sfc meta.script.lips source.ts meta.import.ts meta.block.ts
+#                        ^^^^^ source.lips.sfc meta.script.lips source.ts meta.import.ts meta.block.ts variable.other.readwrite.alias.ts
+#                             ^ source.lips.sfc meta.script.lips source.ts meta.import.ts meta.block.ts
+#                              ^ source.lips.sfc meta.script.lips source.ts meta.import.ts meta.block.ts punctuation.definition.block.ts
+#                               ^ source.lips.sfc meta.script.lips source.ts meta.import.ts
+#                                ^^^^ source.lips.sfc meta.script.lips source.ts meta.import.ts keyword.control.from.ts
+#                                    ^ source.lips.sfc meta.script.lips source.ts meta.import.ts
+#                                     ^ source.lips.sfc meta.script.lips source.ts meta.import.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#                                      ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.import.ts string.quoted.single.ts
+#                                            ^ source.lips.sfc meta.script.lips source.ts meta.import.ts string.quoted.single.ts punctuation.definition.string.end.ts
+>
+>export type Input = {
+#^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts keyword.control.export.ts
+#      ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts
+#       ^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts storage.type.type.ts
+#           ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts
+#            ^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts entity.name.type.alias.ts
+#                 ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts
+#                  ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts keyword.operator.assignment.ts
+#                   ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts
+#                    ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts punctuation.definition.block.ts
+>  person: string
+#^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts
+#  ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#         ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#          ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts support.type.primitive.ts
+>  default?: string
+#^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts
+#  ^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#         ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts keyword.operator.optional.ts
+#          ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#           ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#            ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts support.type.primitive.ts
+>}
+#^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts punctuation.definition.block.ts
+>type State = {
+#^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts storage.type.type.ts
+#    ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts
+#     ^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts entity.name.type.alias.ts
+#          ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts
+#           ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts keyword.operator.assignment.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts punctuation.definition.block.ts
+>  time: string
+#^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts
+#  ^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#      ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#       ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#        ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts support.type.primitive.ts
+>  speech: string
+#^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts
+#  ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#         ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#          ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts support.type.primitive.ts
+>  online: boolean
+#^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts
+#  ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#         ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#          ^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts support.type.primitive.ts
+>}
+#^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts punctuation.definition.block.ts
+>type Static = {
+#^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts storage.type.type.ts
+#    ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts
+#     ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts entity.name.type.alias.ts
+#           ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts keyword.operator.assignment.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts
+#              ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts punctuation.definition.block.ts
+>  [index: string]: any
+#^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.indexer.declaration.ts
+#  ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.indexer.declaration.ts meta.brace.square.ts
+#   ^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.indexer.declaration.ts variable.parameter.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.indexer.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#         ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.indexer.declaration.ts meta.type.annotation.ts
+#          ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.indexer.declaration.ts meta.type.annotation.ts support.type.primitive.ts
+#                ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.indexer.declaration.ts meta.brace.square.ts
+#                 ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#                  ^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.type.annotation.ts
+#                   ^^^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts meta.type.annotation.ts support.type.primitive.ts
+>}
+#^ source.lips.sfc meta.script.lips source.ts meta.type.declaration.ts meta.object.type.ts punctuation.definition.block.ts
+>
+>const state: State = {
+#^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts storage.type.ts
+#     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts
+#      ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts variable.other.constant.ts
+#           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts
+#             ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts entity.name.type.ts
+#                  ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts
+#                   ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts keyword.operator.assignment.ts
+#                    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts
+#                     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.definition.block.ts
+>  time: 'morning',
+#^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts
+#  ^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#         ^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                 ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.separator.comma.ts
+>  speech: 'hi',
+#^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts
+#  ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#         ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts
+#          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#           ^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.separator.comma.ts
+>  online: true
+#^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts
+#  ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#         ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts
+#          ^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts constant.language.boolean.true.ts
+>}
+#^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.definition.block.ts
+>
+>const input: Input = {
+#^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts storage.type.ts
+#     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts
+#      ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts variable.other.constant.ts
+#           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts
+#             ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts entity.name.type.ts
+#                  ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts
+#                   ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts keyword.operator.assignment.ts
+#                    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts
+#                     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.definition.block.ts
+>  person: 'Bob',
+#^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts
+#  ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#         ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts
+#          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#           ^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#               ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.separator.comma.ts
+>  default: 'Good evening'
+#^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts
+#  ^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#         ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts
+#           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#            ^^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+>}
+#^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.definition.block.ts
+>
+>const static: Static = {
+#^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts storage.type.ts
+#     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts
+#      ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts variable.other.constant.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts
+#              ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts entity.name.type.ts
+#                    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts
+#                     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts keyword.operator.assignment.ts
+#                      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts
+#                       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.definition.block.ts
+>  verb: 'Say',
+#^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts
+#  ^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#         ^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.separator.comma.ts
+>  users: {
+#^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts
+#  ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts
+#         ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts punctuation.definition.block.ts
+>    Europe: [
+#^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts
+#    ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.brace.square.ts
+>      { name: 'Xavier des Rouseaux', location: 'Pincier, Toulouse' },
+#^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts
+#      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.definition.block.ts
+#       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts
+#        ^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#               ^^^^^^^^^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                                  ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                                   ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.separator.comma.ts
+#                                    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts
+#                                     ^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#                                             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#                                              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#                                               ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#                                                ^^^^^^^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                                                                 ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                                                                  ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#                                                                   ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.definition.block.ts
+#                                                                    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts punctuation.separator.comma.ts
+>      { name: 'Frank Peterson', location: 'Greenville, London' }
+#^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts
+#      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.definition.block.ts
+#       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts
+#        ^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#               ^^^^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.separator.comma.ts
+#                               ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts
+#                                ^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#                                        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#                                         ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#                                          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#                                           ^^^^^^^^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                                                             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                                                              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#                                                               ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.definition.block.ts
+>    ],
+#^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts
+#    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.brace.square.ts
+#     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts punctuation.separator.comma.ts
+>    Africa: [
+#^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts
+#    ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.brace.square.ts
+>      { name: 'Ebu Sepegna', location: 'Keta, Volta' },
+#^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts
+#      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.definition.block.ts
+#       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts
+#        ^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#               ^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.separator.comma.ts
+#                            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts
+#                             ^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#                                     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#                                      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#                                       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#                                        ^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                                                   ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                                                    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#                                                     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.definition.block.ts
+#                                                      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts punctuation.separator.comma.ts
+>      { name: 'Gadje Ama', location: 'Ougbo, Plateaux' },
+#^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts
+#      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.definition.block.ts
+#       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts
+#        ^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#               ^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                         ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.separator.comma.ts
+#                          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts
+#                           ^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#                                   ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#                                    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#                                     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#                                      ^^^^^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                                                     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                                                      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#                                                       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.definition.block.ts
+#                                                        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts punctuation.separator.comma.ts
+>      { name: 'Albert Kefas', location: 'Gamba, Ndjamena' }
+#^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts
+#      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.definition.block.ts
+#       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts
+#        ^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#               ^^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.separator.comma.ts
+#                             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts
+#                              ^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+#                                      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts punctuation.separator.key-value.ts
+#                                       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#                                        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#                                         ^^^^^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts
+#                                                        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                                                         ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts meta.object.member.ts
+#                                                          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.objectliteral.ts punctuation.definition.block.ts
+>    ]
+#^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts
+#    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts meta.array.literal.ts meta.brace.square.ts
+>  }
+#^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts meta.object.member.ts
+#  ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.objectliteral.ts punctuation.definition.block.ts
+>}
+#^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.definition.block.ts
+>
+>const handler: Handlers<Shape<{ input: Input, state: State, static: Static }>> = {
+#^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts storage.type.ts
+#     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts
+#      ^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.definition.variable.ts variable.other.constant.ts
+#             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts
+#               ^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts entity.name.type.ts
+#                       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
+#                        ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts entity.name.type.ts
+#                             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts punctuation.definition.typeparameters.begin.ts
+#                              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts punctuation.definition.block.ts
+#                               ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts
+#                                ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#                                     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#                                      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#                                       ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts entity.name.type.ts
+#                                            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts punctuation.separator.comma.ts
+#                                             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts
+#                                              ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#                                                   ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#                                                    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#                                                     ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts entity.name.type.ts
+#                                                          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts punctuation.separator.comma.ts
+#                                                           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts
+#                                                            ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.definition.property.ts variable.object.property.ts
+#                                                                  ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#                                                                   ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#                                                                    ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts entity.name.type.ts
+#                                                                          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts meta.field.declaration.ts meta.type.annotation.ts
+#                                                                           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts meta.object.type.ts punctuation.definition.block.ts
+#                                                                            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
+#                                                                             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts meta.type.parameters.ts punctuation.definition.typeparameters.end.ts
+#                                                                              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.var-single-variable.expr.ts meta.type.annotation.ts
+#                                                                               ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts keyword.operator.assignment.ts
+#                                                                                ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts
+#                                                                                 ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.definition.block.ts
+>  handleConnect( online: boolean, e: Event ){
+#^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts
+#  ^^^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.definition.method.ts entity.name.function.ts
+#               ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts punctuation.definition.parameters.begin.ts
+#                ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts
+#                 ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts variable.parameter.ts
+#                       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#                        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts meta.type.annotation.ts
+#                         ^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts meta.type.annotation.ts support.type.primitive.ts
+#                                ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts punctuation.separator.parameter.ts
+#                                 ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts
+#                                  ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts variable.parameter.ts
+#                                   ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts meta.type.annotation.ts keyword.operator.type.annotation.ts
+#                                    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts meta.type.annotation.ts
+#                                     ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts meta.type.annotation.ts entity.name.type.ts
+#                                          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts meta.type.annotation.ts
+#                                           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.parameters.ts punctuation.definition.parameters.end.ts
+#                                            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.definition.block.ts
+>    console.log('Connected: ', online, e )
+#^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#    ^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.function-call.ts variable.other.object.ts
+#           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.function-call.ts punctuation.accessor.ts
+#            ^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.function-call.ts entity.name.function.ts
+#               ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.brace.round.ts
+#                ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#                 ^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts string.quoted.single.ts
+#                            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.separator.comma.ts
+#                              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                               ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts variable.other.readwrite.ts
+#                                     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.separator.comma.ts
+#                                      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                                       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts variable.other.readwrite.ts
+#                                        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                                         ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts meta.brace.round.ts
+>
+>    this.state.online = online
+#^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#    ^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts variable.language.this.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.accessor.ts
+#         ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts variable.other.object.property.ts
+#              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.accessor.ts
+#               ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts variable.other.property.ts
+#                     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts keyword.operator.assignment.ts
+#                       ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                        ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts variable.other.readwrite.ts
+>    this.state.time = !online ? 'evening' : 'morning'
+#^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#    ^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts variable.language.this.ts
+#        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.accessor.ts
+#         ^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts variable.other.object.property.ts
+#              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.accessor.ts
+#               ^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts variable.other.property.ts
+#                   ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts keyword.operator.assignment.ts
+#                     ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                      ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts keyword.operator.logical.ts
+#                       ^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts variable.other.readwrite.ts
+#                             ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                              ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts keyword.operator.ternary.ts
+#                               ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                                ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#                                 ^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts string.quoted.single.ts
+#                                        ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts string.quoted.single.ts punctuation.definition.string.end.ts
+#                                         ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                                          ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts keyword.operator.ternary.ts
+#                                           ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#                                            ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts string.quoted.single.ts punctuation.definition.string.begin.ts
+#                                             ^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts string.quoted.single.ts
+#                                                    ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts string.quoted.single.ts punctuation.definition.string.end.ts
+>    
+>    // this.setState({ online, time: 'evening' })
+#^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.whitespace.comment.leading.ts
+#    ^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts comment.line.double-slash.ts punctuation.definition.comment.ts
+#      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts comment.line.double-slash.ts
+>    // console.log('Updated to: ', this.state.online )
+#^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.whitespace.comment.leading.ts
+#    ^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts comment.line.double-slash.ts punctuation.definition.comment.ts
+#      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts comment.line.double-slash.ts
+>  }
+#^^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts
+#  ^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts meta.method.declaration.ts meta.block.ts punctuation.definition.block.ts
+>}
+#^ source.lips.sfc meta.script.lips source.ts meta.var.expr.ts meta.objectliteral.ts punctuation.definition.block.ts
+>
+><div component="Greet" style="!state.online && 'color: red'">
+#^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+# ^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#    ^ source.lips.sfc meta.tag.lips
+#     ^^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#              ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#               ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                     ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                      ^ source.lips.sfc meta.tag.lips
+#                       ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                            ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                             ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                              ^^^^^^^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                                            ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                                             ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                                              ^^^^^^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                                                           ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                                                            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>  <span @text=input.person>me</span>:
+#^^ source.lips.sfc
+#  ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#   ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#       ^ source.lips.sfc meta.tag.lips
+#        ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#             ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#              ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                   ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                    ^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                          ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                           ^^ source.lips.sfc
+#                             ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                               ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                   ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                    ^^ source.lips.sfc
+>  (<span @text="state.online ? 'Online' : 'Offline'"></span>)
+#^^^ source.lips.sfc
+#   ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#    ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#        ^ source.lips.sfc meta.tag.lips
+#         ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#              ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#               ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                                                   ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                                                    ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                                     ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                       ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                                           ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                                            ^^ source.lips.sfc
+>  <span @text=static.verb>...</span>
+#^^ source.lips.sfc
+#  ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#   ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#       ^ source.lips.sfc meta.tag.lips
+#        ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#             ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#              ^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                    ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                     ^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                         ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                          ^^^ source.lips.sfc
+#                             ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                               ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                   ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>
+>  <div>
+#^^ source.lips.sfc
+#  ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#   ^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#      ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>    <for [x] from="0" to="2">
+#^^^^ source.lips.sfc
+#    ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#     ^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#        ^ source.lips.sfc meta.tag.lips
+#         ^ source.lips.sfc meta.tag.lips meta.arguments.lips punctuation.definition.arguments.begin.lips
+#          ^ source.lips.sfc meta.tag.lips meta.arguments.lips variable.parameter.lips
+#           ^ source.lips.sfc meta.tag.lips meta.arguments.lips punctuation.definition.arguments.end.lips
+#            ^ source.lips.sfc meta.tag.lips
+#             ^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                 ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                  ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                   ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                    ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                     ^ source.lips.sfc meta.tag.lips
+#                      ^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                        ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                         ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                          ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                           ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>      <if( state.time == 'morning' )>
+#^^^^^^ source.lips.sfc
+#      ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#       ^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#         ^ source.lips.sfc meta.tag.lips meta.head.lips punctuation.section.head.begin.lips
+#          ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#           ^^^^^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips variable.other.object.ts
+#                ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                 ^^^^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips variable.other.property.ts
+#                     ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#                      ^^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips keyword.operator.comparison.ts
+#                        ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#                         ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips string.quoted.single.ts punctuation.definition.string.begin.ts
+#                          ^^^^^^^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips string.quoted.single.ts
+#                                 ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips string.quoted.single.ts punctuation.definition.string.end.ts
+#                                  ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#                                   ^ source.lips.sfc meta.tag.lips meta.head.lips punctuation.section.head.end.lips
+#                                    ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>        <switch( state.speech )>
+#^^^^^^^^ source.lips.sfc
+#        ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#               ^ source.lips.sfc meta.tag.lips meta.head.lips punctuation.section.head.begin.lips
+#                ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#                 ^^^^^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips variable.other.object.ts
+#                      ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                       ^^^^^^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips variable.other.property.ts
+#                             ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#                              ^ source.lips.sfc meta.tag.lips meta.head.lips punctuation.section.head.end.lips
+#                               ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>          <case is="hi">
+#^^^^^^^^^^ source.lips.sfc
+#          ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#           ^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#               ^ source.lips.sfc meta.tag.lips
+#                ^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                  ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                   ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                    ^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                      ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                       ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>            <span on-click(handleConnect, !state.online)>Hi - </span>
+#^^^^^^^^^^^^ source.lips.sfc
+#            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#             ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                 ^ source.lips.sfc meta.tag.lips
+#                  ^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.event.lips
+#                          ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.section.arguments.begin.lips
+#                           ^^^^^^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.readwrite.ts
+#                                        ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.separator.comma.ts
+#                                         ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips
+#                                          ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips keyword.operator.logical.ts
+#                                           ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                                                ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                                                 ^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                                                       ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.section.arguments.end.lips
+#                                                        ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                                         ^^^^^ source.lips.sfc
+#                                                              ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                                ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                                                    ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>            <span @text=x></span>
+#^^^^^^^^^^^^ source.lips.sfc
+#            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#             ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                 ^ source.lips.sfc meta.tag.lips
+#                  ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#                       ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                        ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.readwrite.ts
+#                         ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                          ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                            ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>          </case>
+#^^^^^^^^^^ source.lips.sfc
+#          ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#            ^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#                ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>          <case is="hello">
+#^^^^^^^^^^ source.lips.sfc
+#          ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#           ^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#               ^ source.lips.sfc meta.tag.lips
+#                ^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                  ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                   ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                    ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                         ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                          ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>            <span>Hello - </span>
+#^^^^^^^^^^^^ source.lips.sfc
+#            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#             ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                 ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                  ^^^^^^^^ source.lips.sfc
+#                          ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                            ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>            <span>{x}</span>
+#^^^^^^^^^^^^ source.lips.sfc
+#            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#             ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                 ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                  ^ source.lips.sfc meta.embedded.expression.lips punctuation.section.embedded.begin.lips
+#                   ^ source.lips.sfc meta.embedded.expression.lips variable.other.readwrite.ts
+#                    ^ source.lips.sfc meta.embedded.expression.lips punctuation.section.embedded.end.lips
+#                     ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                       ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                           ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>          </case>
+#^^^^^^^^^^ source.lips.sfc
+#          ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#            ^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#                ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>          <case is="bonjour">
+#^^^^^^^^^^ source.lips.sfc
+#          ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#           ^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#               ^ source.lips.sfc meta.tag.lips
+#                ^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                  ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                   ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                    ^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                           ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>            <span>Bonjour - </span>
+#^^^^^^^^^^^^ source.lips.sfc
+#            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#             ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                 ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                  ^^^^^^^^^^ source.lips.sfc
+#                            ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                              ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                  ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>            <span>{x}</span>
+#^^^^^^^^^^^^ source.lips.sfc
+#            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#             ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                 ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                  ^ source.lips.sfc meta.embedded.expression.lips punctuation.section.embedded.begin.lips
+#                   ^ source.lips.sfc meta.embedded.expression.lips variable.other.readwrite.ts
+#                    ^ source.lips.sfc meta.embedded.expression.lips punctuation.section.embedded.end.lips
+#                     ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                       ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                           ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>          </case>
+#^^^^^^^^^^ source.lips.sfc
+#          ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#            ^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#                ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>          <default>Salut</default>
+#^^^^^^^^^^ source.lips.sfc
+#          ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#           ^^^^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#                  ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                   ^^^^^ source.lips.sfc
+#                        ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                          ^^^^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#                                 ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>        </switch>
+#^^^^^^^^ source.lips.sfc
+#        ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#          ^^^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#                ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>        <div>Static content</div>
+#^^^^^^^^ source.lips.sfc
+#        ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#             ^^^^^^^^^^^^^^ source.lips.sfc
+#                           ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                             ^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>      </if>
+#^^^^^^ source.lips.sfc
+#      ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#        ^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#          ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>      <else-if( state.time == 'afternoon' )>
+#^^^^^^ source.lips.sfc
+#      ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#       ^^^^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#              ^ source.lips.sfc meta.tag.lips meta.head.lips punctuation.section.head.begin.lips
+#               ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#                ^^^^^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips variable.other.object.ts
+#                     ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                      ^^^^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips variable.other.property.ts
+#                          ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#                           ^^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips keyword.operator.comparison.ts
+#                             ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#                              ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips string.quoted.single.ts punctuation.definition.string.begin.ts
+#                               ^^^^^^^^^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips string.quoted.single.ts
+#                                        ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips string.quoted.single.ts punctuation.definition.string.end.ts
+#                                         ^ source.lips.sfc meta.tag.lips meta.head.lips meta.embedded.expression.lips
+#                                          ^ source.lips.sfc meta.tag.lips meta.head.lips punctuation.section.head.end.lips
+#                                           ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>        <span on-click(handleConnect, !state.online)>Good afternoon - </span>
+#^^^^^^^^ source.lips.sfc
+#        ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#             ^ source.lips.sfc meta.tag.lips
+#              ^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.event.lips
+#                      ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.section.arguments.begin.lips
+#                       ^^^^^^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.readwrite.ts
+#                                    ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.separator.comma.ts
+#                                     ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips
+#                                      ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips keyword.operator.logical.ts
+#                                       ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                                            ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                                             ^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                                                   ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.section.arguments.end.lips
+#                                                    ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                                     ^^^^^^^^^^^^^^^^^ source.lips.sfc
+#                                                                      ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                                        ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                                                            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>        <span>{x}</span>
+#^^^^^^^^ source.lips.sfc
+#        ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#             ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#              ^ source.lips.sfc meta.embedded.expression.lips punctuation.section.embedded.begin.lips
+#               ^ source.lips.sfc meta.embedded.expression.lips variable.other.readwrite.ts
+#                ^ source.lips.sfc meta.embedded.expression.lips punctuation.section.embedded.end.lips
+#                 ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                   ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                       ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>      </else-if>
+#^^^^^^ source.lips.sfc
+#      ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#        ^^^^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#               ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>      <else>
+#^^^^^^ source.lips.sfc
+#      ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#       ^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#           ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>        <span @text=input.default on-click(handleConnect, !state.online)></span>
+#^^^^^^^^ source.lips.sfc
+#        ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#             ^ source.lips.sfc meta.tag.lips
+#              ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#                   ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                    ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                         ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                          ^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                                 ^ source.lips.sfc meta.tag.lips
+#                                  ^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.event.lips
+#                                          ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.section.arguments.begin.lips
+#                                           ^^^^^^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.readwrite.ts
+#                                                        ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.separator.comma.ts
+#                                                         ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips
+#                                                          ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips keyword.operator.logical.ts
+#                                                           ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                                                                ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                                                                 ^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                                                                       ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.section.arguments.end.lips
+#                                                                        ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                                                         ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                                           ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                                                               ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>        <span @html="<b>Everyone</b>"></span>
+#^^^^^^^^ source.lips.sfc
+#        ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#             ^ source.lips.sfc meta.tag.lips
+#              ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#                   ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                    ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.begin.lips
+#                     ^^^^^^^^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips
+#                                    ^ source.lips.sfc meta.tag.lips meta.attribute.lips string.quoted.double.lips punctuation.definition.string.end.lips
+#                                     ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                      ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                        ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>      </else>
+#^^^^^^ source.lips.sfc
+#      ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#        ^^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>    </for>
+#^^^^ source.lips.sfc
+#    ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#      ^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#         ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>  </div>
+#^^ source.lips.sfc
+#  ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#    ^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#       ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>
+>  <ul>
+#^^ source.lips.sfc
+#  ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#   ^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#     ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>    <for [continent, users] in=static.users>
+#^^^^ source.lips.sfc
+#    ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#     ^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#        ^ source.lips.sfc meta.tag.lips
+#         ^ source.lips.sfc meta.tag.lips meta.arguments.lips punctuation.definition.arguments.begin.lips
+#          ^^^^^^^^^ source.lips.sfc meta.tag.lips meta.arguments.lips variable.parameter.lips
+#                   ^ source.lips.sfc meta.tag.lips meta.arguments.lips punctuation.separator.comma.lips
+#                    ^ source.lips.sfc meta.tag.lips meta.arguments.lips
+#                     ^^^^^ source.lips.sfc meta.tag.lips meta.arguments.lips variable.parameter.lips
+#                          ^ source.lips.sfc meta.tag.lips meta.arguments.lips punctuation.definition.arguments.end.lips
+#                           ^ source.lips.sfc meta.tag.lips
+#                            ^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                              ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                               ^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                                     ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                                      ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                                           ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>      <li key=continent>
+#^^^^^^ source.lips.sfc
+#      ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#       ^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#         ^ source.lips.sfc meta.tag.lips
+#          ^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#             ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#              ^^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.readwrite.ts
+#                       ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>        <span @text=continent>Frederic Dupont</span>:
+#^^^^^^^^ source.lips.sfc
+#        ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#             ^ source.lips.sfc meta.tag.lips
+#              ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#                   ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                    ^^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.readwrite.ts
+#                             ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                              ^^^^^^^^^^^^^^^ source.lips.sfc
+#                                             ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                               ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                                   ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                                    ^^ source.lips.sfc
+>        <ul>
+#^^^^^^^^ source.lips.sfc
+#        ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#         ^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#           ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>          <for [user, userid] in=users>
+#^^^^^^^^^^ source.lips.sfc
+#          ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#           ^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#              ^ source.lips.sfc meta.tag.lips
+#               ^ source.lips.sfc meta.tag.lips meta.arguments.lips punctuation.definition.arguments.begin.lips
+#                ^^^^ source.lips.sfc meta.tag.lips meta.arguments.lips variable.parameter.lips
+#                    ^ source.lips.sfc meta.tag.lips meta.arguments.lips punctuation.separator.comma.lips
+#                     ^ source.lips.sfc meta.tag.lips meta.arguments.lips
+#                      ^^^^^^ source.lips.sfc meta.tag.lips meta.arguments.lips variable.parameter.lips
+#                            ^ source.lips.sfc meta.tag.lips meta.arguments.lips punctuation.definition.arguments.end.lips
+#                             ^ source.lips.sfc meta.tag.lips
+#                              ^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                                ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                                 ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.readwrite.ts
+#                                      ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>            <li key=userid>
+#^^^^^^^^^^^^ source.lips.sfc
+#            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#             ^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#               ^ source.lips.sfc meta.tag.lips
+#                ^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.lips
+#                   ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                    ^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.readwrite.ts
+#                          ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>              <span @text=user.name>Frederic Dupont</span> - 
+#^^^^^^^^^^^^^^ source.lips.sfc
+#              ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#               ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                   ^ source.lips.sfc meta.tag.lips
+#                    ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#                         ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                          ^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                              ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                               ^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                                   ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                    ^^^^^^^^^^^^^^^ source.lips.sfc
+#                                                   ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                     ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                                         ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                                          ^^^^ source.lips.sfc
+>              <span @text=user.location>Nice, Belogre</span>
+#^^^^^^^^^^^^^^ source.lips.sfc
+#              ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#               ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                   ^ source.lips.sfc meta.tag.lips
+#                    ^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips entity.other.attribute-name.directive.lips
+#                         ^ source.lips.sfc meta.tag.lips meta.attribute.lips punctuation.separator.key-value.lips
+#                          ^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.object.ts
+#                              ^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips punctuation.accessor.ts
+#                               ^^^^^^^^ source.lips.sfc meta.tag.lips meta.attribute.lips meta.embedded.expression.lips variable.other.property.ts
+#                                       ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+#                                        ^^^^^^^^^^^^^ source.lips.sfc
+#                                                     ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#                                                       ^^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                                                           ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>            </li>
+#^^^^^^^^^^^^ source.lips.sfc
+#            ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#              ^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#                ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>          </for>
+#^^^^^^^^^^ source.lips.sfc
+#          ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#            ^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#               ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>        </ul>
+#^^^^^^^^ source.lips.sfc
+#        ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#          ^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#            ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>      </li>
+#^^^^^^ source.lips.sfc
+#      ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#        ^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#          ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>    </for>
+#^^^^ source.lips.sfc
+#    ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#      ^^^ source.lips.sfc meta.tag.lips keyword.control.flow.lips
+#         ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+>  </ul>
+#^^ source.lips.sfc
+#  ^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#    ^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#      ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips
+></div>
+#^^ source.lips.sfc meta.tag.lips punctuation.definition.tag.begin.lips
+#  ^^^ source.lips.sfc meta.tag.lips entity.name.tag.lips
+#     ^ source.lips.sfc meta.tag.lips punctuation.definition.tag.end.lips

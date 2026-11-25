@@ -1,0 +1,64 @@
+{
+  "name": "lips",
+  "displayName": "Lips",
+  "description": "Highlighting for Lips templates: .lips files, and templates and stylesheets inside TypeScript and JavaScript",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "lips",
+    "template",
+    "syntax"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lips-js/language-tools",
+    "directory": "extensions/vscode"
+  },
+  "bugs": "https://github.com/lips-js/language-tools/issues",
+  "scripts": {
+    "build": "node -e \"require('fs').cpSync('../../packages/language-core/syntaxes', 'syntaxes', { recursive: true })\"",
+    "vscode:prepublish": "npm run build"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "lips",
+        "aliases": [ "Lips", "lips" ],
+        "extensions": [ ".lips" ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "lips",
+        "scopeName": "source.lips.sfc",
+        "path": "./syntaxes/lips-sfc.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.ts": "typescript"
+        }
+      },
+      {
+        "scopeName": "source.lips",
+        "path": "./syntaxes/lips.tmLanguage.json"
+      },
+      {
+        "scopeName": "source.css.lips",
+        "path": "./syntaxes/lips-stylesheet.tmLanguage.json"
+      },
+      {
+        "scopeName": "inline.lips",
+        "path": "./syntaxes/lips-injection.tmLanguage.json",
+        "injectTo": [ "source.ts", "source.js", "source.tsx", "source.js.jsx", "source.lips.sfc" ],
+        "embeddedLanguages": {
+          "meta.embedded.block.lips": "lips",
+          "meta.embedded.block.css.lips": "css"
+        }
+      }
+    ]
+  }
+}
