@@ -1,0 +1,7 @@
+# Ship only what the extension needs; vsce always adds package.json and README.md.
+# images/ stays out: vsce points the README's image at GitHub, so the packaged copy is never read.
+**
+!LICENSE
+!CHANGELOG.md
+!language-configuration.json
+!syntaxes/**
